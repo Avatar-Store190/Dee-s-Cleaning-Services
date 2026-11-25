@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Services & Prices | Dee's Cleaning Services Parow Valley</title>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}body{background:#FFF0F7}
 .header{position:sticky;top:0;background:#0A0A0A;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
 .header a{color:#fff;text-decoration:none;font-weight:700;font-size:12px;margin-left:12px}
 .btn-wa{background:#25D366;color:#fff;padding:10px 16px;border-radius:999px;font-weight:800;text-decoration:none;font-size:12px}
-
-/* ===== SPACE FOR LOGO - SAME AS INDEX.HTML ===== */
 .logo-space{background:#fff;text-align:center;padding:14px 10px 10px;border-bottom:1px solid #FFE0F0}
 .logo-space img{max-width:280px;max-height:120px;width:auto;height:auto;object-fit:contain;display:none;margin:0 auto;border-radius:10px}
 .logo-space .logo-placeholder{font-size:12px;font-weight:800;color:#999;letter-spacing:1px}
 .logo-space .logo-placeholder b{color:#E6007E;font-size:14px}
-
 .hero{background:#E6007E;color:#fff;text-align:center;padding:26px 16px}.hero h1{font-size:28px}
-/* ===== FESTIVE TEXT - BOLD + BIGGER ===== */
 .festive-big{font-size:22px!important;font-weight:900!important;line-height:1.4;text-transform:uppercase;letter-spacing:.5px}
 @media(max-width:600px){.festive-big{font-size:19px!important}}
 .wrap{max-width:900px;margin:0 auto;padding:16px}.row{background:#fff;border-radius:16px;padding:14px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #FFD6EC}.row b{font-size:15px}.row small{color:#666;display:block}.price{color:#E6007E;font-size:20px;font-weight:900;white-space:nowrap}.book{background:#000;color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
@@ -25,31 +23,37 @@
 .footer{text-align:center;padding:20px;font-size:11px;color:#888}
 </style></head><body>
 <div class="header"><div><b>DEE'S</b> <span style="color:#FF2FA6">CLEANING</span></div><div><a href="index.html">Home</a><a href="services.html">Services</a></div><a class="btn-wa" id="waTop" href="https://wa.me/27730126925">WhatsApp</a></div>
-
-<!-- ===== SPACE FOR LOGO - SAME AS INDEX.HTML ===== -->
 <div class="logo-space">
   <img id="siteLogo" src="" alt="Dee's Logo">
   <div class="logo-placeholder" id="logoPlaceholder"><b>DEE'S CLEANING SERVICES</b><br>Logo space — Upload logo in Owner Login on Home page</div>
 </div>
-
 <div class="hero"><h1>ALL SERVICES & PRICES</h1>
-<!-- FESTIVE TEXT - BOLD + BIGGER -->
 <p id="motiveText" class="festive-big">🎄 FESTIVE SEASON IS HERE — SAME-DAY QUOTES ON WHATSAPP • OPEN 08:00-18:00 🎄</p>
 <div class="special" id="specialBanner">🎄 <b>FESTIVE SPECIAL IS ON!</b><br>Message us for today's special price.</div></div>
 <div class="wrap"><div id="list"></div>
 <div class="card"><h3>How It Works</h3><p>1. WhatsApp Dee what you need cleaned<br>2. She gives you a price & time<br>3. Team arrives, cleans, you check — you pay after you're happy.<br><br>📍 67 Piet Retief Street, Parow Valley, Cape Town 7500<br>📱 <span id="phoneText">073 012 6925</span> • Open 08:00 - 18:00 Every Day</p><a class="btn-wa" id="waBottom" href="https://wa.me/27730126925" style="display:inline-block;margin-top:10px;padding:12px 18px">BOOK ON WHATSAPP →</a></div>
 </div><div class="footer">Dee's Cleaning Services • 67 Piet Retief Street, Parow Valley • <a href="index.html">Owner Login</a><br>Website Built by Avatar Web-Store</div>
 <script>
-// ===== LOGO FROM PHONE - Uploaded on index.html, shows here too =====
-let savedLogo = localStorage.getItem('dees_logo') || '';
-let logoImg = document.getElementById('siteLogo');
-let logoPh = document.getElementById('logoPlaceholder');
-if(savedLogo){ logoImg.src = savedLogo; logoImg.style.display = 'block'; logoPh.style.display = 'none'; }
-else{ logoImg.style.display = 'none'; logoPh.style.display = 'block'; }
-
-let d=JSON.parse(localStorage.getItem('dees_data'))||{phone:'27730126925',displayPhone:'073 012 6925',motive:'🎄 FESTIVE SEASON IS HERE — SAME-DAY QUOTES ON WHATSAPP • OPEN 08:00-18:00 🎄',special:true,services:[{n:'Deep Cleaning',p:'R400',d:'Full deep clean — kitchen, bathroom, floors, walls'},{n:'Outside Area Cleaning',p:'R350',d:'Yard, stoep, patio & outside area'},{n:'Office Cleaning',p:'R400',d:'Offices & shops'},{n:'Windows Cleaning',p:'R200',d:'Windows inside & outside'},{n:'Ironing',p:'R200',d:'Ironing — shirts, uniforms & bedding'},{n:'Move In & Move Out',p:'R400',d:'Move in / out clean'}]};
-if(d.special)document.getElementById('specialBanner').style.display='block';
-document.getElementById('motiveText').innerText=d.motive;document.getElementById('phoneText').innerText=d.displayPhone;
-let wa='https://wa.me/'+d.phone;document.getElementById('waTop').href=wa;document.getElementById('waBottom').href=wa;
-document.getElementById('list').innerHTML=d.services.map(s=>`<div class="row"><div><b>✔️ ${s.n}</b><small>${s.d||''}</small></div><div class="price">${s.p}</div><a class="book" href="${wa}?text=${encodeURIComponent('Hi Dee, I want '+s.n+' '+s.p)}">Book →</a></div>`).join('');
+const firebaseConfig = {
+  apiKey: "AIzaSyCgQOJR-0vjRdrgttGes8SkfCKpkFTHwVQ",
+  authDomain: "dees-cleaning.firebaseapp.com",
+  databaseURL: "https://dees-cleaning-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "dees-cleaning",
+  storageBucket: "dees-cleaning.firebasestorage.app",
+  messagingSenderId: "1012480753541",
+  appId: "1:1012480753541:web:d0453175e06025155fceec"
+};
+let db=null; try{ firebase.initializeApp(firebaseConfig); db=firebase.database(); }catch(e){}
+let fallback={phone:'27730126925',displayPhone:'073 012 6925',motive:'🎄 FESTIVE SEASON IS HERE — SAME-DAY QUOTES ON WHATSAPP • OPEN 08:00-18:00 🎄',special:true,services:[{n:'Deep Cleaning',p:'R400',d:'Full deep clean'},{n:'Outside Area Cleaning',p:'R350',d:'Yard, stoep, patio'},{n:'Office Cleaning',p:'R400',d:'Offices & shops'},{n:'Windows Cleaning',p:'R200',d:'Windows inside & outside'},{n:'Ironing',p:'R200',d:'Ironing'},{n:'Move In & Move Out',p:'R400',d:'Move in / out clean'}]};
+function renderAll(d, logo){
+  let logoImg=document.getElementById('siteLogo'), logoPh=document.getElementById('logoPlaceholder');
+  if(logo){ logoImg.src=logo; logoImg.style.display='block'; logoPh.style.display='none'; }
+  if(d.special)document.getElementById('specialBanner').style.display='block';
+  document.getElementById('motiveText').innerText=d.motive;document.getElementById('phoneText').innerText=d.displayPhone;
+  let wa='https://wa.me/'+d.phone;document.getElementById('waTop').href=wa;document.getElementById('waBottom').href=wa;
+  document.getElementById('list').innerHTML=d.services.map(s=>`<div class="row"><div><b>✔️ ${s.n}</b><small>${s.d||''}</small></div><div class="price">${s.p}</div><a class="book" href="${wa}?text=${encodeURIComponent('Hi Dee, I want '+s.n+' '+s.p)}">Book →</a></div>`).join('');
+}
+if(db){
+  db.ref('dees').on('value', snap=>{ let v=snap.val(); if(v) renderAll(v.data||fallback, v.logo||''); else renderAll(fallback,''); });
+} else { renderAll(fallback,''); }
 </script></body></html>
