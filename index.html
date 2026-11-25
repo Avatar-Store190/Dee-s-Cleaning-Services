@@ -2,14 +2,14 @@
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Dee's Cleaning Services | Parow Valley, Cape Town | From R200</title>
 <meta name="description" content="Professional cleaning in Parow Valley, Cape Town. Deep Cleaning R400, Office R400, Windows R200. Book on WhatsApp in 30 seconds. Open 08:00-18:00.">
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
 :root{--pink:#E6007E;--pink2:#FF2FA6;--black:#0A0A0A;--light:#FFF7FB}
 body{background:var(--light);color:#111}
 .topbar{background:#0A0A0A;color:#fff;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
 .topbar a{color:#fff;text-decoration:none;font-weight:700}
-
-/* ===== EMBEDDED LOGO - PURE CODE ===== */
 .logo-banner{background:linear-gradient(180deg,#FFF0F7 0%,#FFFFFF 55%,#FFE6F3 100%);text-align:center;padding:18px 12px 16px;border-bottom:4px solid var(--pink);position:relative;overflow:hidden}
 .logo-banner:before{content:"✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨";position:absolute;top:6px;left:0;right:0;font-size:12px;opacity:.6;letter-spacing:4px}
 .logo-banner:after{content:"✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦";position:absolute;bottom:4px;left:0;right:0;font-size:12px;opacity:.5;letter-spacing:4px}
@@ -25,12 +25,9 @@ body{background:var(--light);color:#111}
 .logo-right{font-size:44px;line-height:1;text-align:center}
 .logo-right small{display:block;font-size:11px;font-weight:900;color:#E6007E;letter-spacing:1px;margin-top:2px}
 .logo-sub{font-size:11px;font-weight:900;letter-spacing:2px;color:#0A0A0A;margin-top:8px}
-
-/* ===== LOGO ON RIGHT SIDE - WHERE YOU TICKED GREEN ✅ ===== */
 #siteLogo{position:absolute;right:18px;top:50%;transform:translateY(-50%);height:130px;width:130px;object-fit:contain;display:none;z-index:3;background:#fff;border:3px solid #E6007E;border-radius:16px;padding:6px;box-shadow:0 4px 15px rgba(0,0,0,.15)}
 @media(max-width:820px){#siteLogo{position:static;transform:none;display:none;margin:10px auto 0;height:110px;width:110px}}
 @media(max-width:820px){#siteLogo.show-mobile{display:block}}
-
 .nav{position:sticky;top:0;z-index:50;background:#fff;display:flex;justify-content:center;gap:18px;padding:12px;box-shadow:0 2px 10px rgba(0,0,0,.08);flex-wrap:wrap}
 .nav a{color:#111;text-decoration:none;font-weight:800;font-size:13px}.nav a.active{color:var(--pink)}
 .btn-wa{background:#25D366;color:#fff!important;padding:10px 18px;border-radius:999px;font-size:12px;font-weight:800;text-decoration:none;display:inline-block}
@@ -83,12 +80,11 @@ body{background:var(--light);color:#111}
 .serviceBox{border:1px solid #eee;padding:10px;border-radius:12px;margin-top:8px;background:#fff}.small{font-size:12px;color:#666}
 .team-preview{width:90px;height:90px;border-radius:12px;object-fit:cover;border:3px solid #E6007E;display:block;margin:8px auto}
 .logo-preview{width:180px;max-height:120px;object-fit:contain;border-radius:10px;display:none;margin:8px auto;border:2px solid #FFD6EC}
+.cloud-status{font-size:11px;font-weight:800;padding:6px 10px;border-radius:999px;display:inline-block;margin-top:6px}
+.cloud-on{background:#D4FFD4;color:#006400}.cloud-off{background:#FFE0E0;color:#900}
 </style></head><body>
-
 <div id="publicView">
 <div class="topbar"><span>📍 67 Piet Retief Street, Parow Valley • Cape Town</span><span>📱 <span id="phoneTop">073 012 6925</span> • 🕐 08:00-18:00</span><a href="https://wa.me/27730126925">WhatsApp Us →</a></div>
-
-<!-- EMBEDDED LOGO BANNER + UPLOADED LOGO ON RIGHT SIDE -->
 <div class="logo-banner">
   <div class="logo-row">
     <div class="logo-left">🪣<br><small>SPARKLE</small></div>
@@ -100,12 +96,9 @@ body{background:var(--light);color:#111}
     <div class="logo-right">🏠<br><small>PAROW VALLEY</small></div>
   </div>
   <div class="logo-sub">✨ PAROW VALLEY • WESTERN CAPE • CAPE TOWN ✨</div>
-  <!-- LOGO GOES HERE - RIGHT SIDE WHERE YOU TICKED -->
   <img id="siteLogo" src="" alt="Dee's Logo">
 </div>
-
 <div class="nav"><a class="active" href="#top">Home</a><a href="#services">Services</a><a href="services.html">All Prices</a><a href="#work">Our Work</a><a href="#team">Team</a><a href="#reviews">Reviews</a><a class="btn-wa" id="waNav" href="https://wa.me/27730126925">Book Now</a></div>
-
 <div class="hero" id="top">
 <div class="hero-left">
 <span class="badge">✨ PAROW VALLEY'S TRUSTED CLEANING TEAM • SAME-DAY BOOKING • 08:00-18:00</span>
@@ -122,7 +115,6 @@ body{background:var(--light);color:#111}
 <div class="float-card"><b>💰 From Only R200 — No Hidden Fees</b><p>Deep Cleaning R400 • Office Cleaning R400 • Windows R200<br>📍 Parow Valley, Parow, Goodwood, Bellville & surrounds • Open 08:00-18:00</p><a class="btn btn-pink" id="waFloat" href="https://wa.me/27730126925?text=Hi%20Dee%2C%20I%20want%20a%20quote">GET FREE QUOTE →</a></div>
 </div>
 </div>
-
 <div class="wrap">
 <div class="card"><h2 class="section-title" style="margin-top:0">Our Motive 💖 <span>— Why We Clean</span></h2><p id="motive2">We believe a clean home = a calm mind. Dee started this business to help busy moms, working families and offices in Parow Valley & Cape Town have a little more time, and a little less stress. We clean with love, care and pride — like it's our own home.</p>
 <div class="pills"><span>📍 Parow Valley</span><span>📍 Parow</span><span>📍 Goodwood</span><span>📍 Bellville</span><span>📍 Delft</span><span>📍 Ravensmead</span><span>📍 Elsies River</span></div></div>
@@ -142,18 +134,16 @@ body{background:var(--light);color:#111}
 </div>
 <div class="footer">Dee's Cleaning Services • 67 Piet Retief Street, Parow Valley, Cape Town 7500 • <a onclick="showAdmin()">Owner Login 🔒</a><br>Website Built by Avatar Web-Store</div>
 </div>
-
 <a class="floating-wa" id="waFloatBtn" href="https://wa.me/27730126925">💬</a>
-
 <div id="adminView">
-<div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #FFD6EC" id="loginBox"><h2 style="color:#E6007E">Owner Login 🔒</h2><p class="small">Only Dee can enter. Default password: <b>dee1234</b></p><label>Password</label><input id="pass" type="password" placeholder="Enter password"><button onclick="login()">Login</button><p class="small" style="text-align:center;margin-top:10px"><a href="#" onclick="showPublic();return false">← Back to website</a></p></div>
+<div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #FFD6EC" id="loginBox"><h2 style="color:#E6007E">Owner Login 🔒</h2><p class="small">Only Dee can enter. Default password: <b>dee1234</b></p><p><span id="cloudStatus" class="cloud-status cloud-off">☁️ Cloud: Not Connected</span></p><label>Password</label><input id="pass" type="password" placeholder="Enter password"><button onclick="login()">Login</button><p class="small" style="text-align:center;margin-top:10px"><a href="#" onclick="showPublic();return false">← Back to website</a></p></div>
 <div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #FFD6EC;display:none" id="dash">
-<h2 style="color:#E6007E">Dee's Dashboard 💖</h2>
+<h2 style="color:#E6007E">Dee's Dashboard 💖 — CLOUD</h2><p class="small">Changes save to cloud — all customers see them instantly.</p>
 <h3 style="margin-top:16px">🖼️ Logo — Shows on RIGHT side of banner</h3>
-<p class="small">Tap Choose File → Gallery / Files → pick your logo → Upload This Logo. It will show where you ticked green.</p>
+<p class="small">Tap Choose File → Gallery / Files → pick your logo → Upload This Logo.</p>
 <img id="logoPreview" class="logo-preview" alt="Logo preview">
 <input type="file" id="logoInput" accept="image/*" onchange="previewLogo()" style="border:2px dashed #E6007E;background:#FFF0F7">
-<button onclick="uploadLogo()" style="background:#000">✅ Upload This Logo</button>
+<button onclick="uploadLogo()" style="background:#000">✅ Upload This Logo To Cloud</button>
 <button class="del" onclick="removeLogo()">❌ Remove Logo</button>
 <p class="small">Status: <span id="logoStatus">No logo yet</span></p>
 <label>Motive / About Text (Home)</label><textarea id="motive2Input" rows="3"></textarea>
@@ -165,20 +155,56 @@ body{background:var(--light);color:#111}
 <h3 style="margin-top:16px">Photos — Add Photos Of Your Work</h3><input type="file" accept="image/*" onchange="addPhoto(this)"><div id="photosEdit"></div>
 <h3 style="margin-top:16px">Team Members</h3><div id="teamEdit"></div><button onclick="addMember()" style="background:#000">+ Add Team Member</button>
 <h3 style="margin-top:16px">Change Password</h3><label>New Password</label><input id="newPass" placeholder="New password"><button onclick="changePass()" style="background:#000">Change Password</button>
-<button onclick="save()">💾 SAVE ALL CHANGES</button><button class="del" onclick="showPublic()">← Back To Website</button>
+<button onclick="save()">💾 SAVE ALL CHANGES TO CLOUD</button><button class="del" onclick="showPublic()">← Back To Website</button>
 </div>
 </div>
-
 <script>
-function getData(){try{return JSON.parse(localStorage.getItem('dees_data'))||null}catch(e){return null}}
-let d=getData()||{phone:'27730126925',displayPhone:'073 012 6925',motive:'🎄 FESTIVE SEASON IS HERE — DEEP CLEANING, OFFICE CLEANING, WINDOWS, IRONING & MORE IN PAROW VALLEY! 🎄',motive2:"We believe a clean home = a calm mind. Dee started this business to help busy moms, working families and offices in Parow Valley & Cape Town have a little more time, and a little less stress. We clean with love, care and pride — like it's our own home.",special:true,services:[{n:'Deep Cleaning',p:'R400',d:'Full deep clean — kitchen, bathroom, floors, walls. We bring all products & equipment.',img:'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80'},{n:'Outside Area Cleaning',p:'R350',d:'Yard, stoep, patio, braai area & outside walls',img:'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80'},{n:'Office Cleaning',p:'R400',d:'Offices, shops & small businesses — daily, weekly or once-off',img:'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80'},{n:'Windows Cleaning',p:'R200',d:'Inside & outside windows sparkling, no streaks',img:'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'},{n:'Ironing',p:'R200',d:'Neat ironing, folded & ready — shirts, uniforms & bedding',img:'https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=600&q=80'},{n:'Move In & Move Out',p:'R400',d:'Empty house clean before you move in / get your deposit back',img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80'}],photos:['https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80','https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80','https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?w=600&q=80','https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80'],team:[{n:'Dee',r:'Owner & Founder',img:'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80'},{n:'Team Member',r:'Cleaner',img:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80'}]};
-let pass=localStorage.getItem('dees_pass')||'dee1234';
-let savedLogo=localStorage.getItem('dees_logo')||'';
-let tempLogo='';
+// ===== ☁️ YOUR EXACT CONFIG FROM FIREBASE =====
+const firebaseConfig = {
+  apiKey: "AIzaSyCgQOJR-0vjRdrgttGes8SkfCKpkFTHwVQ",
+  authDomain: "dees-cleaning.firebaseapp.com",
+  databaseURL: "https://dees-cleaning-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "dees-cleaning",
+  storageBucket: "dees-cleaning.firebasestorage.app",
+  messagingSenderId: "1012480753541",
+  appId: "1:1012480753541:web:d0453175e06025155fceec"
+};
+let db = null, cloudOn = false;
+try{
+  firebase.initializeApp(firebaseConfig);
+  db = firebase.database();
+  cloudOn = true;
+  document.getElementById('cloudStatus').innerText = "☁️ Cloud: Connected ✅";
+  document.getElementById('cloudStatus').className = "cloud-status cloud-on";
+}catch(e){ console.log("Firebase error", e); }
+let defaultData = {phone:'27730126925',displayPhone:'073 012 6925',motive:'🎄 FESTIVE SEASON IS HERE — DEEP CLEANING, OFFICE CLEANING, WINDOWS, IRONING & MORE IN PAROW VALLEY! 🎄',motive2:"We believe a clean home = a calm mind. Dee started this business to help busy moms, working families and offices in Parow Valley & Cape Town have a little more time, and a little less stress. We clean with love, care and pride — like it's our own home.",special:true,services:[{n:'Deep Cleaning',p:'R400',d:'Full deep clean — kitchen, bathroom, floors, walls. We bring all products & equipment.',img:'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80'},{n:'Outside Area Cleaning',p:'R350',d:'Yard, stoep, patio, braai area & outside walls',img:'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80'},{n:'Office Cleaning',p:'R400',d:'Offices, shops & small businesses — daily, weekly or once-off',img:'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80'},{n:'Windows Cleaning',p:'R200',d:'Inside & outside windows sparkling, no streaks',img:'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'},{n:'Ironing',p:'R200',d:'Neat ironing, folded & ready — shirts, uniforms & bedding',img:'https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=600&q=80'},{n:'Move In & Move Out',p:'R400',d:'Empty house clean before you move in / get your deposit back',img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80'}],photos:['https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80','https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80','https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?w=600&q=80','https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80'],team:[{n:'Dee',r:'Owner & Founder',img:'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80'},{n:'Team Member',r:'Cleaner',img:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80'}]};
+let d = JSON.parse(JSON.stringify(defaultData));
+let savedLogo = '';
+let pass = localStorage.getItem('dees_pass') || 'dee1234';
+let tempLogo = '';
+function startCloud(){
+  if(!cloudOn){ renderPublic(); return; }
+  db.ref('dees').on('value', (snap)=>{
+    let val = snap.val();
+    if(val){
+      if(val.data) d = val.data;
+      if(val.logo) savedLogo = val.logo;
+      if(val.pass) pass = val.pass;
+      renderPublic();
+    } else {
+      db.ref('dees').set({data: d, logo: '', pass: pass});
+      renderPublic();
+    }
+  });
+}
+function saveToCloud(){
+  if(!cloudOn){ localStorage.setItem('dees_data', JSON.stringify(d)); localStorage.setItem('dees_logo', savedLogo); return Promise.resolve(); }
+  return db.ref('dees').set({data: d, logo: savedLogo, pass: pass});
+}
 function renderLogo(){
   let img=document.getElementById('siteLogo');
-  if(savedLogo){img.src=savedLogo; img.style.display='block'; img.classList.add('show-mobile'); document.getElementById('logoStatus').innerText='Logo uploaded ✅ - showing on right side';}
-  else{img.style.display='none'; img.classList.remove('show-mobile'); document.getElementById('logoStatus').innerText='No logo yet';}
+  if(savedLogo){img.src=savedLogo; img.style.display='block'; img.classList.add('show-mobile'); let s=document.getElementById('logoStatus'); if(s) s.innerText='Logo in cloud ✅ - showing on right side';}
+  else{img.style.display='none'; img.classList.remove('show-mobile');}
 }
 function renderPublic(){
 if(d.special)document.getElementById('specialBanner').style.display='block';else document.getElementById('specialBanner').style.display='none';
@@ -202,13 +228,13 @@ document.getElementById('teamEdit').innerHTML=d.team.map((t,i)=>`<div class="ser
 renderLogo();
 }
 function previewLogo(){let f=document.getElementById('logoInput').files[0]; if(!f) return; let r=new FileReader(); r.onload=e=>{tempLogo=e.target.result; let p=document.getElementById('logoPreview'); p.src=tempLogo; p.style.display='block';}; r.readAsDataURL(f);}
-function uploadLogo(){if(!tempLogo) return alert('First tap Choose File and pick a logo from your phone Gallery / Files'); savedLogo=tempLogo; localStorage.setItem('dees_logo',savedLogo); renderLogo(); alert('Logo uploaded! ✅ Now showing on right side');}
-function removeLogo(){savedLogo=''; tempLogo=''; localStorage.removeItem('dees_logo'); document.getElementById('logoPreview').style.display='none'; renderLogo();}
+async function uploadLogo(){if(!tempLogo) return alert('First tap Choose File and pick a logo'); savedLogo=tempLogo; await saveToCloud(); renderLogo(); alert('Logo saved to CLOUD! ✅ Everyone sees it now');}
+async function removeLogo(){savedLogo=''; tempLogo=''; document.getElementById('logoPreview').style.display='none'; await saveToCloud(); renderLogo();}
 function addService(){d.services.push({n:'New Service',p:'R0',d:'',img:'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80'});renderEdit()}
 function addMember(){d.team.push({n:'New Member',r:'Cleaner',img:''});renderEdit()}
 function addPhoto(el){let r=new FileReader();r.onload=e=>{d.photos.push(e.target.result);renderEdit()};r.readAsDataURL(el.files[0])}
 function upTeamPhoto(i,el){if(!el.files||!el.files[0])return;let r=new FileReader();r.onload=e=>{d.team[i].img=e.target.result;renderEdit()};r.readAsDataURL(el.files[0])}
-function changePass(){let n=document.getElementById('newPass').value;if(!n)return alert('Type new password');localStorage.setItem('dees_pass',n);pass=n;alert('Password changed to: '+n)}
-function save(){d.motive=document.getElementById('motiveInput').value;d.motive2=document.getElementById('motive2Input').value;d.phone=document.getElementById('phoneInput').value;d.displayPhone=document.getElementById('displayPhoneInput').value;d.special=document.getElementById('specialInput').value==='true';localStorage.setItem('dees_data',JSON.stringify(d));alert('Saved!');renderPublic()}
-renderPublic();
+async function changePass(){let n=document.getElementById('newPass').value;if(!n)return alert('Type new password'); pass=n; localStorage.setItem('dees_pass',n); await saveToCloud(); alert('Password changed in cloud: '+n)}
+async function save(){d.motive=document.getElementById('motiveInput').value;d.motive2=document.getElementById('motive2Input').value;d.phone=document.getElementById('phoneInput').value;d.displayPhone=document.getElementById('displayPhoneInput').value;d.special=document.getElementById('specialInput').value==='true'; await saveToCloud(); alert(cloudOn ? 'Saved to CLOUD! ✅ All customers see it now' : 'Saved locally'); renderPublic()}
+startCloud();
 </script></body></html>
