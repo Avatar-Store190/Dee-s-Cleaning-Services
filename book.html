@@ -3,8 +3,9 @@
 <title>Book Cleaning | Dee's Cleaning Services</title>
 <style>
 *{box-sizing:border-box;font-family:Arial}body{margin:0;background:#fff0f7}
-nav{background:#fff;padding:12px 18px;display:flex;justify-content:space-between;box-shadow:0 2px 10px #0001}
-.logo{font-weight:900;font-size:20px}.logo span{color:#ff2e88}
+nav{background:#fff;padding:12px 18px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px #0001}
+.logo{font-weight:900;font-size:20px;display:flex;align-items:center;gap:10px}.logo span{color:#ff2e88}
+.logo img{height:44px;width:auto;max-width:180px;object-fit:contain;border-radius:6px}
 .wrap{max-width:600px;margin:20px auto;background:#fff;padding:25px;border-radius:20px;box-shadow:0 10px 30px #00000015}
 h1 span{color:#ff2e88}
 input,select,textarea{width:100%;padding:13px;border:1px solid #ddd;border-radius:12px;margin:7px 0}
@@ -14,13 +15,20 @@ input,select,textarea{width:100%;padding:13px;border:1px solid #ddd;border-radiu
 table{width:100%;border-collapse:collapse}td{padding:10px;border-bottom:1px solid #eee}td:last-child{font-weight:900;color:#ff2e88;text-align:right}
 </style></head>
 <body>
-<nav><div class="logo">Dee's <span>Cleaning</span></div><a href="index.html" style="font-weight:700;color:#222;text-decoration:none">← Back Home</a></nav>
+
+<!-- ===== COMBINED NAV: LOGO FROM PHONE + TEXT ===== -->
+<nav><div class="logo"><img id="siteLogo2" src="" style="display:none" alt="Dee's Logo"> <span>Dee's <span>Cleaning</span></span></div><a href="index.html" style="font-weight:700;color:#222;text-decoration:none">← Back Home</a></nav>
+
 <div class="wrap">
 <h1>Book Your <span>Cleaning ✨</span></h1>
 <p>Fill this in, we will open WhatsApp with your booking ready to send to Dee — <b>073 012 6925</b>. Open 08:00 - 18:00.</p>
 <div class="price-box" id="priceBox">Choose a service below to see price</div>
-<table><tr><td>🏠 Deep Cleaning</td><td>R400</td></tr><tr><td>🌳 Outside Area</td><td>R350</td></tr><tr><td>🏢 Office Cleaning</td><td>R400</td></tr><tr><td>🪟 Windows</td><td>R200</td></tr><tr><td>👔 Ironing</td><td>R200</td></tr><tr><td>📦 Move In & Out</td><td>R400</td></tr></table><br>
-<label>Service</label><select id="service" onchange="updatePrice()"><option value="">Select service...</option><option>Deep Cleaning</option><option>Outside Area</option><option>Office Cleaning</option><option>Windows</option><option>Ironing</option><option>Move In and Out</option></select>
+
+<!-- Price table - now auto-updates when Dee changes prices -->
+<table id="priceTable"></table><br>
+
+<label>Service</label>
+<select id="service" onchange="updatePrice()"><option value="">Select service...</option></select>
 <label>Your Name</label><input id="name" placeholder="e.g. Thandi">
 <label>Your Address</label><input id="address" placeholder="e.g. 12 Main Road, Parow">
 <label>Date</label><input id="date" type="date">
@@ -28,16 +36,70 @@ table{width:100%;border-collapse:collapse}td{padding:10px;border-bottom:1px soli
 <label>Notes</label><textarea id="notes" placeholder="e.g. 2 bedrooms, 1 bathroom"></textarea>
 <button class="btn btn-green" onclick="book()">💬 Send Booking on WhatsApp</button>
 <button class="btn" style="background:#111;margin-top:10px" onclick="location.href='tel:0730126925'">📞 Or Call 073 012 6925</button>
-<p style="font-size:12px;color:#777;text-align:center">📍 67 Piet Retief Street, Parow Valley, Cape Town 7500 • Open 08:00 AM - 18:00 PM</p>
+<p style="font-size:12px;color:#777;text-align:center">📍 67 Piet Retief Street, Parow Valley, Cape Town 7500 • Open 08:00 AM - 18:00 PM<br><b>Website Built by Avatar Web-Store</b></p>
 </div>
+
 <script>
-let prices={'Deep Cleaning':400,'Outside Area':350,'Office Cleaning':400,'Windows':200,'Ironing':200,'Move In and Out':400};
-function updatePrice(){let s=document.getElementById('service').value; document.getElementById('priceBox').innerText=s? s+' — R'+prices[s]+' — Open 08:00 to 18:00':'Choose a service below to see price';}
-let p=new URLSearchParams(location.search).get('service'); if(p){document.getElementById('service').value=p; updatePrice();}
+// ===== 1. LOGO FROM PHONE'S FILES (uploaded in Owner Login on index.html) =====
+let l = localStorage.getItem('dees_logo') || '';
+if(l){
+  let i = document.getElementById('siteLogo2');
+  i.src = l;
+  i.style.display = 'block';
+}
+
+// ===== 2. PRICES - Uses Dee's changed prices if she changed them, else defaults =====
+let defaultPrices = [
+  {name:'Deep Cleaning', icon:'🏠', price:400},
+  {name:'Outside Area', icon:'🌳', price:350},
+  {name:'Office Cleaning', icon:'🏢', price:400},
+  {name:'Windows', icon:'🪟', price:200},
+  {name:'Ironing', icon:'👔', price:200},
+  {name:'Move In and Out', icon:'📦', price:400}
+];
+let savedServices = JSON.parse(localStorage.getItem('dees_services') || 'null');
+// Map saved services (from index.html) to this page's format
+let servicesList;
+if(savedServices){
+  servicesList = savedServices.map(s => ({name: s.name, icon: s.icon || '✨', price: s.price}));
+  // Fix name differences: index uses "Outside Area Cleaning" / "Windows Cleaning" etc.
+  // Keep both names working
+} else {
+  servicesList = defaultPrices;
+}
+// Build dropdown + table from the list
+let sel = document.getElementById('service');
+let tbl = document.getElementById('priceTable');
+servicesList.forEach(s => {
+  sel.innerHTML += `<option value="${s.name}">${s.name}</option>`;
+  tbl.innerHTML += `<tr><td>${s.icon} ${s.name}</td><td>R${s.price}</td></tr>`;
+});
+function getPrice(name){
+  let f = servicesList.find(x => x.name === name);
+  return f ? f.price : 0;
+}
+function updatePrice(){
+  let s = document.getElementById('service').value;
+  document.getElementById('priceBox').innerText = s ? s + ' — R' + getPrice(s) + ' — Open 08:00 to 18:00' : 'Choose a service below to see price';
+}
+// If coming from homepage Book button: ?service=Deep Cleaning
+let p = new URLSearchParams(location.search).get('service');
+if(p){
+  // Try exact match, else try partial match (e.g. Outside Area vs Outside Area Cleaning)
+  let match = servicesList.find(x => x.name === p) || servicesList.find(x => x.name.includes(p) || p.includes(x.name));
+  if(match){ document.getElementById('service').value = match.name; updatePrice(); }
+}
+
+// ===== 3. BOOKING - FIXED: backticks added =====
 function book(){
-let s=document.getElementById('service').value, n=document.getElementById('name').value, a=document.getElementById('address').value, d=document.getElementById('date').value, t=document.getElementById('time').value, no=document.getElementById('notes').value;
-if(!s||!n||!a||!d) return alert('Please fill Name, Address, Date and Service');
-let msg=Hi Dee! I want to book ${s} (R${prices[s]})%0AName: ${n}%0AAddress: ${a}%0ADate: ${d}%0ATime: ${t} (Open 08:00-18:00)%0ANotes: ${no};
-window.open('https://wa.me/27730126925?text='+msg);
+  let s = document.getElementById('service').value,
+      n = document.getElementById('name').value,
+      a = document.getElementById('address').value,
+      d = document.getElementById('date').value,
+      t = document.getElementById('time').value,
+      no = document.getElementById('notes').value;
+  if(!s || !n || !a || !d) return alert('Please fill Name, Address, Date and Service');
+  let msg = `Hi Dee! I want to book ${s} (R${getPrice(s)})%0AName: ${n}%0AAddress: ${a}%0ADate: ${d}%0ATime: ${t} (Open 08:00-18:00)%0ANotes: ${no}`;
+  window.open('https://wa.me/27730126925?text=' + msg);
 }
 </script></body></html>
