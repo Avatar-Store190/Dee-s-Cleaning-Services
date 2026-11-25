@@ -1,140 +1,180 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dee's Cleaning Services | Parow Valley, Cape Town</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<title>Dee's Cleaning Services | Parow Valley, Cape Town | From R200</title>
+<meta name="description" content="Professional cleaning in Parow Valley, Cape Town. Deep Cleaning R400, Office R400, Windows R200. Book on WhatsApp in 30 seconds. Open 08:00-18:00.">
 <style>
-*{box-sizing:border-box;font-family:'Inter',Arial}body{margin:0;background:#fff;color:#111}
-a{text-decoration:none}
-.topbar{background:#111;color:#fff;padding:9px 18px;font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap}
-nav{position:sticky;top:0;z-index:99;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 20px;border-bottom:1px solid #f0d0de}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}.logo span{color:#e91e7f}
-.logo img{height:52px;width:auto;max-width:220px;object-fit:contain;border-radius:6px}
-nav a{color:#111;font-weight:600;margin:0 10px;font-size:14px}
-.btn{background:#e91e7f;color:#fff!important;padding:12px 22px;border-radius:6px;display:inline-block;font-weight:700;border:0;cursor:pointer}
-.btn-green{background:#16a34a}.btn-dark{background:#111}
-.hero{background:linear-gradient(90deg,#fff,#fff5f9 60%,#ffe6f0);padding:50px 20px}
-.hero-wrap{max-width:1100px;margin:auto;display:flex;gap:30px;align-items:center;flex-wrap:wrap}
-.hero-text{flex:1.2;min-width:300px}.hero-text h1{font-family:'Playfair Display',serif;font-size:44px;line-height:1.1;margin:12px 0}.hero-text h1 span{color:#e91e7f}.hero-text p{color:#555;line-height:1.7}
-.badge{background:#e91e7f;color:#fff;padding:7px 13px;border-radius:20px;font-size:12px;font-weight:700}
-.hero-card{flex:1;min-width:280px;background:#fff;border:1px solid #f0d0de;border-left:5px solid #e91e7f;border-radius:10px;padding:24px}
-.hero-card input,.hero-card select{width:100%;padding:12px;border:1px solid #ddd;border-radius:6px;margin:6px 0}
-#specialBanner{display:none;background:#e91e7f;color:#fff;text-align:center;padding:13px;font-weight:700}
-section{max-width:1100px;margin:auto;padding:40px 20px}
-h2{font-size:32px;font-family:'Playfair Display',serif}h2 span{color:#e91e7f}.sub{color:#777}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.card{background:#fff;border:1px solid #f0d0de;border-radius:10px;padding:24px}.card p{color:#555;line-height:1.65;font-size:14px}.price{font-size:28px;font-weight:800}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}.gallery img{width:100%;height:170px;object-fit:cover;border-radius:8px}
-.empty{background:#fff5f9;border:1px dashed #f0a0c0;padding:25px;text-align:center;color:#777;border-radius:10px}
-.team{display:flex;gap:15px;flex-wrap:wrap}.member{background:#fff;border:1px solid #f0d0de;padding:18px;border-radius:10px;width:210px;text-align:center}.member img{width:90px;height:90px;border-radius:50%;object-fit:cover}
-.owner{background:#111;color:#fff;border-radius:12px;padding:26px}.owner input{width:100%;padding:12px;border-radius:6px;border:0;margin:6px 0}.owner button{margin:4px 4px 4px 0}
-.hidden{display:none}.price-edit{display:grid;grid-template-columns:1fr 120px;gap:8px;background:#222;padding:10px;border-radius:8px;margin:6px 0}
-footer{background:#111;color:#aaa;padding:25px;text-align:center;font-size:13px}footer b{color:#fff}
-input,select{padding:12px;border:1px solid #ddd;border-radius:6px;width:100%;margin:6px 0}
-.logo-preview{width:120px;height:80px;object-fit:contain;background:#fff;border-radius:8px;padding:8px;display:none;margin:10px 0}
-@media(max-width:600px){.hero-text h1{font-size:32px}}
-</style></head>
-<body>
-<div class="topbar"><span>67 Piet Retief Street, Parow Valley, Cape Town 7500</span><span>Mon - Sun: 08:00 - 18:00 | <b>073 012 6925</b></span></div>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+:root{--pink:#E6007E;--pink2:#FF2FA6;--black:#0A0A0A;--light:#FFF7FB}
+body{background:var(--light);color:#111}
+.topbar{background:#0A0A0A;color:#fff;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+/* ===== EMBEDDED LOGO - NO IMAGE FILE NEEDED - PURE CODE ===== */
+.logo-banner{background:linear-gradient(180deg,#FFF0F7 0%,#FFFFFF 55%,#FFE6F3 100%);text-align:center;padding:18px 12px 16px;border-bottom:4px solid var(--pink);position:relative;overflow:hidden}
+.logo-banner:before{content:"✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨";position:absolute;top:6px;left:0;right:0;font-size:12px;opacity:.6;letter-spacing:4px}
+.logo-banner:after{content:"✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦";position:absolute;bottom:4px;left:0;right:0;font-size:12px;opacity:.5;letter-spacing:4px}
+.logo-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:2}
+.logo-left{font-size:44px;line-height:1;text-align:center}
+.logo-left small{display:block;font-size:11px;font-weight:900;color:#0A0A0A;letter-spacing:1px;margin-top:2px}
+.logo-main{text-align:center}
+.logo-dees{font-size:64px;line-height:.9;font-weight:900;font-style:italic;color:var(--pink);-webkit-text-stroke:2px #000;text-shadow:3px 3px 0 #000, 5px 5px 0 rgba(230,0,126,.25);letter-spacing:-1px}
+@media(max-width:600px){.logo-dees{font-size:48px}.logo-left{font-size:34px}}
+.logo-cleaning{display:inline-block;background:#0A0A0A;color:#fff;font-size:30px;font-weight:900;font-style:italic;padding:6px 22px;border-radius:999px;border:3px solid var(--pink);margin-top:6px;letter-spacing:1px}
+@media(max-width:600px){.logo-cleaning{font-size:22px;padding:4px 16px}}
+.logo-slogan{display:inline-block;background:#FF9ED2;color:#000;font-size:15px;font-weight:800;font-style:italic;padding:6px 16px;border-radius:0 0 12px 12px;margin-top:8px;box-shadow:0 3px 0 #E6007E}
+.logo-right{font-size:44px;line-height:1;text-align:center}
+.logo-right small{display:block;font-size:11px;font-weight:900;color:#E6007E;letter-spacing:1px;margin-top:2px}
+.logo-sub{font-size:11px;font-weight:900;letter-spacing:2px;color:#0A0A0A;margin-top:8px}
+.nav{position:sticky;top:0;z-index:50;background:#fff;display:flex;justify-content:center;gap:18px;padding:12px;box-shadow:0 2px 10px rgba(0,0,0,.08);flex-wrap:wrap}
+.nav a{color:#111;text-decoration:none;font-weight:800;font-size:13px}.nav a.active{color:var(--pink)}
+.btn-wa{background:#25D366;color:#fff!important;padding:10px 18px;border-radius:999px;font-size:12px;font-weight:800;text-decoration:none;display:inline-block}
+.hero{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:820px){.hero{grid-template-columns:1.2fr .8fr}}
+.hero-left{background:linear-gradient(135deg,#0A0A0A 0%,#2A001A 50%,#E6007E 100%);color:#fff;padding:32px 20px}
+.hero-left .badge{background:#FFE600;color:#000;font-weight:900;font-size:11px;padding:6px 10px;border-radius:999px;display:inline-block}
+.hero-left h1{font-size:36px;line-height:1.05;margin:14px 0}.hero-left h1 span{color:#FF8FD6}
+.hero-left p{color:#FFE6F3;font-size:14px;line-height:1.6}
+.hero-stats{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}.hero-stats div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:10px 12px;border-radius:12px;text-align:center;flex:1;min-width:90px}.hero-stats b{font-size:18px;display:block}.hero-stats small{font-size:11px;color:#FFC2E0}
+.hero-right{position:relative;min-height:280px;background:#ddd}
+.hero-right img{width:100%;height:100%;object-fit:cover;display:block;min-height:280px}
+.hero-right .float-card{position:absolute;left:14px;bottom:14px;right:14px;background:#fff;border-radius:16px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.float-card b{font-size:14px}.float-card p{font-size:12px;color:#666;margin:4px 0}
+.special{background:#FFE600;color:#000;font-weight:900;padding:12px;border-radius:14px;display:none;margin:14px 0;font-size:13px;text-align:center}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 14px}
+.section-title{font-size:22px;font-weight:900;margin:18px 0 6px}.section-title span{color:var(--pink)}
+.card{background:#fff;border-radius:20px;padding:18px;margin-top:14px;border:1px solid #FFE0F0;box-shadow:0 4px 20px rgba(230,0,126,.06)}
+.card p{font-size:13px;line-height:1.7;color:#444;margin-top:6px}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.pills span{background:#FFE6F3;color:#7A0050;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(min-width:720px){.why{grid-template-columns:repeat(4,1fr)}}
+.why div{background:#fff;border-radius:16px;padding:14px;text-align:center;border:1px solid #FFE0F0}.why div span{font-size:26px}.why b{display:block;margin:6px 0 4px}.why p{font-size:12px;color:#666}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
+@media(min-width:720px){.grid{grid-template-columns:repeat(3,1fr)}}
+.service{background:#fff;border-radius:18px;padding:0;overflow:hidden;border:1px solid #FFE0F0}.service img{width:100%;height:130px;object-fit:cover}.service-inner{padding:14px;text-align:center}.service b{font-size:15px}.service .price{color:var(--pink);font-size:24px;font-weight:900;margin:6px 0}.service p{font-size:12px;color:#666}
+.btn{display:block;text-align:center;padding:12px;border-radius:999px;font-weight:800;text-decoration:none;font-size:13px;margin-top:10px}
+.btn-pink{background:var(--pink);color:#fff}.btn-black{background:#000;color:#fff}
+.row{background:#fff;border-radius:16px;padding:14px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #FFE0F0}.row b{font-size:15px}.row small{color:#666;display:block}.price2{color:#E6007E;font-size:20px;font-weight:900;white-space:nowrap}.book{background:#000;color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+@media(min-width:720px){.gallery{grid-template-columns:repeat(4,1fr)}}
+.gallery img{width:100%;height:170px;object-fit:cover;border-radius:14px}
+.team{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+@media(min-width:720px){.team{grid-template-columns:repeat(4,1fr)}}
+.member{background:#fff;border-radius:14px;padding:12px;text-align:center}.member img{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--pink)}
+.reviews{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+@media(min-width:720px){.reviews{grid-template-columns:repeat(3,1fr)}}
+.review{background:#fff;border-radius:16px;padding:14px;border:1px solid #FFE0F0}.review b{color:var(--pink)}.review p{font-size:13px;line-height:1.6;margin-top:6px;color:#444}
+.footer{text-align:center;padding:20px;font-size:11px;color:#888}.footer a{color:#E6007E;font-weight:800;cursor:pointer}
+.floating-wa{position:fixed;right:16px;bottom:16px;z-index:100;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+#adminView{display:none;max-width:700px;margin:0 auto;padding:14px}
+#adminView label{font-weight:800;font-size:12px;display:block;margin-top:14px}
+#adminView input,#adminView textarea,#adminView select{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin-top:4px}
+#adminView button{background:#E6007E;color:#fff;border:0;padding:12px;border-radius:999px;font-weight:800;width:100%;margin-top:14px;cursor:pointer}
+#adminView .del{background:#000}#adminView .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.serviceBox{border:1px solid #eee;padding:10px;border-radius:12px;margin-top:8px;background:#fff}.small{font-size:12px;color:#666}
+.team-preview{width:90px;height:90px;border-radius:12px;object-fit:cover;border:3px solid #E6007E;display:block;margin:8px auto}
+</style></head><body>
 
-<!-- LOGO SHOWS HERE - FROM PHONE UPLOAD OR TEXT IF NO LOGO YET -->
-<nav><div class="logo"><img id="siteLogo" src="" alt="" style="display:none"><span>DEE'S <span>CLEANING</span></span></div><div><a href="#services">Services</a><a href="#gallery">Our Work</a><a href="#team">Team</a><a href="book.html">Book</a></div><a class="btn btn-dark" href="#owner">Owner Login</a></nav>
+<div id="publicView">
+<div class="topbar"><span>📍 67 Piet Retief Street, Parow Valley • Cape Town</span><span>📱 <span id="phoneTop">073 012 6925</span> • 🕐 08:00-18:00</span><a href="https://wa.me/27730126925">WhatsApp Us →</a></div>
 
-<div id="specialBanner">SPECIAL: <span id="specialText"></span></div>
+<!-- EMBEDDED LOGO - NO FILE, PURE HTML/CSS INSIDE INDEX.HTML - SAME AS NIKKI'S -->
+<div class="logo-banner">
+  <div class="logo-row">
+    <div class="logo-left">🪣<br><small>SPARKLE</small></div>
+    <div class="logo-main">
+      <div class="logo-dees">Dee's</div>
+      <div><span class="logo-cleaning">Cleaning Services</span></div>
+      <div><span class="logo-slogan">Professional • Trusted • Parow Valley ♥</span></div>
+    </div>
+    <div class="logo-right">🏠<br><small>PAROW VALLEY</small></div>
+  </div>
+  <div class="logo-sub">✨ PAROW VALLEY • WESTERN CAPE • CAPE TOWN ✨</div>
+</div>
 
-<header class="hero"><div class="hero-wrap">
-<div class="hero-text"><span class="badge">PROFESSIONAL • RELIABLE • AFFORDABLE</span><h1>Professional Cleaning,<br>Done Right <span>Every Time.</span></h1><p>High-quality cleaning for homes and businesses in Parow Valley and surrounding areas. Trained staff, own equipment, and consistent, spotless results.</p><a class="btn btn-green" href="https://wa.me/27730126925?text=Hi%20Dee!%20I%20want%20to%20book%20cleaning">Book on WhatsApp</a> <a class="btn btn-dark" href="book.html">View Prices & Book →</a><p style="font-size:13px">📞 073 012 6925 | 🕐 Open Daily 08:00 - 18:00</p></div>
-<div class="hero-card"><h3>Get a Free Quote</h3><select id="quickService"></select><input id="quickName" placeholder="Your Name"><input id="quickPhone" placeholder="Your Phone"><button class="btn" style="width:100%" onclick="quickBook()">Request Quote on WhatsApp →</button></div>
-</div></header>
+<div class="nav"><a class="active" href="#top">Home</a><a href="#services">Services</a><a href="services.html">All Prices</a><a href="#work">Our Work</a><a href="#team">Team</a><a href="#reviews">Reviews</a><a class="btn-wa" id="waNav" href="https://wa.me/27730126925">Book Now</a></div>
 
-<section id="services"><h2>Our Services <span>& Prices</span></h2><p class="sub">Transparent pricing. No hidden fees.</p><div class="grid" id="servicesGrid"></div></section>
-<section id="gallery"><h2>Proof of <span>Work</span></h2><p class="sub">Real photos uploaded by Dee.</p><div class="gallery" id="galleryGrid"></div><div id="galleryEmpty" class="empty">No photos uploaded yet.</div></section>
-<section id="team"><h2>Meet Our <span>Team</span></h2><div class="team" id="teamGrid"></div></section>
+<div class="hero" id="top">
+<div class="hero-left">
+<span class="badge">✨ PAROW VALLEY'S TRUSTED CLEANING TEAM • SAME-DAY BOOKING • 08:00-18:00</span>
+<h1>Your Home, <span>Sparkling Clean.</span><br>Your Day, Easier.</h1>
+<p id="motiveText">Festive season is here — deep cleaning, office cleaning, windows, ironing & more in Parow Valley & surrounds. We clean with love, like it's our own home. Open daily 08:00 - 18:00.</p>
+<div class="special" id="specialBanner">🎄 FESTIVE SPECIAL ON — Ask on WhatsApp for today's special price!</div>
+<div class="hero-stats"><div><b>500+</b><small>Homes Cleaned</small></div><div><b>4.9 ★</b><small>Happy Clients</small></div><div><b>30 sec</b><small>To Book</small></div></div>
+<br><a class="btn-wa" id="waHero" href="https://wa.me/27730126925?text=Hi%20Dee%2C%20I%20want%20a%20cleaning%20quote" style="font-size:14px;padding:14px 22px">Book On WhatsApp →</a>
+<p style="font-size:12px;margin-top:10px;opacity:.9">No contracts • Pay after you're happy • 67 Piet Retief Street, Parow Valley</p>
+</div>
+<div class="hero-right">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=900&q=80" alt="Cleaning">
+<div class="float-card"><b>💰 From Only R200 — No Hidden Fees</b><p>Deep Cleaning R400 • Office Cleaning R400 • Windows R200<br>📍 Parow Valley, Parow, Goodwood, Bellville & surrounds • Open 08:00-18:00</p><a class="btn btn-pink" id="waFloat" href="https://wa.me/27730126925?text=Hi%20Dee%2C%20I%20want%20a%20quote">GET FREE QUOTE →</a></div>
+</div>
+</div>
 
-<!-- ================= OWNER LOGIN ================= -->
-<section id="owner"><div class="owner">
-<h2 style="color:#fff">Owner Dashboard — Dee Only</h2>
-<p style="color:#aaa">Login with your phone to manage logo, prices, photos, team & specials.</p>
-<div id="loginBox"><input id="loginPhone" placeholder="Phone: 0730126925"><input id="loginPass" type="password" placeholder="Password: dee1234"><button class="btn" onclick="doLogin()">Login</button><p style="font-size:12px;color:#aaa">Default: 0730126925 / dee1234</p></div>
+<div class="wrap">
+<div class="card"><h2 class="section-title" style="margin-top:0">Our Motive 💖 <span>— Why We Clean</span></h2><p id="motive2">We believe a clean home = a calm mind. Dee started this business to help busy moms, working families and offices in Parow Valley & Cape Town have a little more time, and a little less stress. We clean with love, care and pride — like it's our own home.</p>
+<div class="pills"><span>📍 Parow Valley</span><span>📍 Parow</span><span>📍 Goodwood</span><span>📍 Bellville</span><span>📍 Delft</span><span>📍 Ravensmead</span><span>📍 Elsies River</span></div></div>
+<div class="why">
+<div><span>⚡</span><b>Same-Day</b><p>Book today, clean today if we have space</p></div>
+<div><span>🛡️</span><b>Trusted & Safe</b><p>Same team, checked & caring</p></div>
+<div><span>🧴</span><b>We Bring All</b><p>We bring our own products & equipment</p></div>
+<div><span>💖</span><b>Pay After Happy</b><p>You check first, then you pay</p></div>
+</div>
+<h2 class="section-title" id="services">Popular Services <span>— Tap To Book</span></h2>
+<div class="grid" id="servicesGrid"></div>
+<div class="card"><h2 class="section-title" style="margin-top:0">All Services & Prices 💰</h2><div id="list"></div></div>
+<div class="card" id="work"><h2 class="section-title" style="margin-top:0">Before & After / Our Work 📸</h2><div class="gallery" id="galleryGrid"></div><p style="font-size:11px;color:#999">Photos are added by Dee from her Owner Dashboard.</p></div>
+<div class="card" id="team"><h2 class="section-title" style="margin-top:0">Meet Our Team 👩🏽‍🤝‍👩🏾</h2><div class="team" id="teamGrid"></div></div>
+<div class="card" id="reviews"><h2 class="section-title" style="margin-top:0">What Parow Valley Says ⭐⭐⭐⭐⭐</h2><div class="reviews"><div class="review"><b>★★★★★ — Aunty M, Parow Valley</b><p>"Dee's team made my house shine for Christmas. My kitchen was sparkling! I will book again."</p></div><div class="review"><b>★★★★★ — Thandi, Parow</b><p>"Fast, friendly and so thorough. Deep cleaning was worth every rand. Highly recommend."</p></div><div class="review"><b>★★★★★ — Mr. Daniels, Goodwood</b><p>"Office cleaned properly every time. Professional and on time. Best cleaning in Parow Valley."</p></div></div></div>
+<div class="card" style="text-align:center;background:#0A0A0A;color:#fff"><h2 style="color:#FF2FA6">Ready For A Clean Home?</h2><p style="color:#ddd">Message Dee now — she replies fast on WhatsApp. Tell her what you need cleaned and where you stay.</p><a class="btn btn-pink" id="waBottom" href="https://wa.me/27730126925?text=Hi%20Dee%2C%20I%20want%20a%20cleaning%20quote%20in%20Parow%20Valley">GET A FREE QUOTE ON WHATSAPP</a><p style="margin-top:10px;font-size:12px">Call / WhatsApp: <span id="phoneText2">073 012 6925</span> • 67 Piet Retief Street, Parow Valley • Open 08:00-18:00</p></div>
+</div>
+<div class="footer">Dee's Cleaning Services • 67 Piet Retief Street, Parow Valley, Cape Town 7500 • <a onclick="showAdmin()">Owner Login 🔒</a><br>Website Built by Avatar Web-Store</div>
+</div>
 
-<div id="dash" class="hidden">
-<p>Welcome, Dee. <button class="btn btn-dark" style="border:1px solid #444" onclick="doLogout()">Logout</button></p>
+<a class="floating-wa" id="waFloatBtn" href="https://wa.me/27730126925">💬</a>
 
-<!-- ===== LOGO UPLOAD FROM PHONE'S FILES - THIS IS THE PART YOU ASKED FOR ===== -->
-<h3>🖼️ Upload Logo From Your Phone's Files</h3>
-<p style="font-size:13px;color:#aaa">Tap "Choose File" below. On your phone it will open Gallery / Files / Camera. Pick your logo. It will show at the top of the website instantly.</p>
-<img id="logoPreview" class="logo-preview" alt="Logo preview">
-<!-- This input opens the PHONE'S FILES / GALLERY -->
-<input type="file" id="logoInput" accept="image/*" style="background:#fff;color:#111" onchange="previewLogo()">
-<button class="btn" onclick="uploadLogo()">✅ Upload This Logo</button>
-<button class="btn btn-dark" style="border:1px solid #444" onclick="removeLogo()">❌ Remove Logo (Show Text Only)</button>
-<p style="font-size:12px;color:#aaa">Status: <span id="logoStatus">No logo yet - showing text</span></p>
-
-<h3 style="margin-top:25px">💰 Change Prices</h3><div id="priceEditor"></div><button class="btn btn-green" onclick="savePrices()">Save New Prices</button>
-<h3 style="margin-top:25px">📸 Add Proof Photo From Phone</h3><input type="file" id="photoInput" accept="image/*" style="background:#fff;color:#111"><input id="photoCaption" placeholder="Caption e.g. Deep cleaning in Parow"><button class="btn" onclick="addPhoto()">Add Photo</button><button class="btn btn-dark" style="border:1px solid #444" onclick="clearPhotos()">Clear All Photos</button>
-<h3 style="margin-top:25px">👥 Add Team Member</h3><input id="teamName" placeholder="Name"><input id="teamRole" placeholder="Role"><button class="btn" onclick="addMember()">Add Team Member</button><button class="btn btn-dark" style="border:1px solid #444" onclick="clearTeam()">Clear Team</button>
-<h3 style="margin-top:25px">🎉 Special ON / OFF</h3><label><input type="checkbox" id="specialOn" onchange="saveSpecial()" style="width:auto"> Show Special Banner</label><input id="specialInput" placeholder="e.g. 20% OFF Deep Cleaning this week!"><button class="btn" onclick="saveSpecial()">Save Special</button>
-<h3 style="margin-top:25px">🔐 Change Password Using Your Phone Number</h3><input id="newPhone" placeholder="Confirm phone: 0730126925"><input id="newPass" type="password" placeholder="New Password"><button class="btn btn-green" onclick="changePass()">Change Password</button>
-<p id="ownerMsg" style="color:#4ade80"></p>
-</div></div></section>
-
-<section style="text-align:center"><h2>Contact & Location</h2><p><b>Dee's Cleaning Services</b><br>67 Piet Retief Street, Parow Valley, Cape Town, 7500<br>Open: 08:00 - 18:00 Every Day | Tel: 073 012 6925</p><a class="btn btn-green" href="https://wa.me/27730126925">Chat on WhatsApp</a> <a class="btn btn-dark" href="tel:0730126925">Call Now</a><br><br><iframe src="https://www.google.com/maps?q=67+Piet+Retief+Street+Parow+Valley+Cape+Town&output=embed" width="100%" height="300" style="border:0;border-radius:10px"></iframe></section>
-<footer>© 2026 Dee's Cleaning Services • 67 Piet Retief Street, Parow Valley, Cape Town 7500 • 073 012 6925 • Open 08:00 - 18:00<br><b>Website Built by Avatar Web-Store</b></footer>
+<div id="adminView">
+<div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #FFD6EC" id="loginBox"><h2 style="color:#E6007E">Owner Login 🔒</h2><p class="small">Only Dee can enter. Default password: <b>dee1234</b></p><label>Password</label><input id="pass" type="password" placeholder="Enter password"><button onclick="login()">Login</button><p class="small" style="text-align:center;margin-top:10px"><a href="#" onclick="showPublic();return false">← Back to website</a></p></div>
+<div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #FFD6EC;display:none" id="dash">
+<h2 style="color:#E6007E">Dee's Dashboard 💖</h2><p class="small">Logo is built into the code — no file to upload. Change anything, click SAVE.</p>
+<label>Motive / About Text (Home)</label><textarea id="motive2Input" rows="3"></textarea>
+<label>Top Banner Text (Hero)</label><textarea id="motiveInput" rows="2"></textarea>
+<label>WhatsApp Number (without + , e.g. 27730126925)</label><input id="phoneInput">
+<label>Display Number (e.g. 073 012 6925)</label><input id="displayPhoneInput">
+<label>🎄 Festive Special? Show special banner?</label><select id="specialInput"><option value="true">YES - Show Special</option><option value="false">NO - Hide Special</option></select>
+<h3 style="margin-top:16px">Services & Prices</h3><div id="servicesEdit"></div><button onclick="addService()" style="background:#000">+ Add New Service</button>
+<h3 style="margin-top:16px">Photos — Add Photos Of Your Work</h3><input type="file" accept="image/*" onchange="addPhoto(this)"><div id="photosEdit"></div>
+<h3 style="margin-top:16px">Team Members</h3><div id="teamEdit"></div><button onclick="addMember()" style="background:#000">+ Add Team Member</button>
+<h3 style="margin-top:16px">Change Password</h3><label>New Password</label><input id="newPass" placeholder="New password"><button onclick="changePass()" style="background:#000">Change Password</button>
+<button onclick="save()">💾 SAVE ALL CHANGES</button><button class="del" onclick="showPublic()">← Back To Website</button>
+</div>
+</div>
 
 <script>
-let defaultServices=[
-{id:'deep',name:'Deep Cleaning',icon:'🏠',price:400,desc1:'Our flagship service. We clean every room thoroughly — floors, kitchen, bathroom, bedrooms and all surfaces — from top to bottom until your home feels new again.',desc2:'Ideal before the festive season, after a party, or when your home needs a proper reset. We bring all cleaning products and equipment with us.',desc3:'Perfect for families, tenants and busy professionals who want a fresh, healthy home without the stress of doing it themselves.'},
-{id:'outside',name:'Outside Area Cleaning',icon:'🌳',price:350,desc1:'We clean your yard, stoep, patio, braai area and outside walls. We sweep, wash and remove dust and dirt to make your outdoor space clean and welcoming again.',desc2:'Great for weekend braais, visitors, or simply enjoying a clean outdoor space with your family. We handle the hard, dirty work so you do not have to.',desc3:'We also clean bins, outdoor furniture and pathways to give your whole property a fresh, well-maintained appearance.'},
-{id:'office',name:'Office Cleaning',icon:'🏢',price:400,desc1:'Keep your office professional and healthy for staff and clients. We clean desks, floors, kitchens, bathrooms, reception and meeting rooms thoroughly and discreetly.',desc2:'We work around your business hours so we never disturb your work. Choose daily, weekly or once-off cleaning — whatever suits your business.',desc3:'A clean office means productive staff, impressed clients, and a business that looks serious and trustworthy every single day.'},
-{id:'windows',name:'Windows Cleaning',icon:'🪟',price:200,desc1:'Crystal-clear windows inside and outside. We wash, wipe and polish all windows and glass doors so more light comes in and your home looks brighter instantly.',desc2:'We remove dust, rain marks and fingerprints safely without leaving streaks. Your windows will look brand new again.',desc3:'Perfect as an add-on to deep cleaning, or as a quick standalone service before photos, viewings or special events.'},
-{id:'ironing',name:'Ironing',icon:'👔',price:200,desc1:'No more pile of unironed clothes. We iron shirts, dresses, school uniforms and bedding neatly and carefully so you always look sharp and ready.',desc2:'We hang or fold everything properly and handle delicate fabrics with care. You can drop off, or we iron at your home.',desc3:'Save hours every week and walk out the door looking fresh, neat and confident without touching an iron.'},
-{id:'move',name:'Move In & Move Out',icon:'📦',price:400,desc1:'Moving is stressful — cleaning should not be. We deep-clean your old place so you get your deposit back, or clean your new place before you move in.',desc2:'We clean empty cupboards, stoves, bathrooms, floors and walls — everything a landlord or estate agent checks. Move with peace of mind.',desc3:'Book us before moving day and arrive to a fresh, clean, ready-to-live-in home. No dust, no mess, no stress.'}
-];
-let services = JSON.parse(localStorage.getItem('dees_services')||JSON.stringify(defaultServices));
-let photos = JSON.parse(localStorage.getItem('dees_photos')||'[]');
-let team = JSON.parse(localStorage.getItem('dees_team')||'[{"name":"Dee","role":"Founder & Head Cleaner","img":""}]');
-let special = JSON.parse(localStorage.getItem('dees_special')||'{"on":true,"text":"Festive Season Special: Book Deep Cleaning + Windows & Save!"}');
-let owner = JSON.parse(localStorage.getItem('dees_owner')||'{"phone":"0730126925","pass":"dee1234"}');
-let savedLogo = localStorage.getItem('dees_logo')||'';
-
-function renderAll(){
-  let logoImg=document.getElementById('siteLogo');
-  if(savedLogo){logoImg.src=savedLogo; logoImg.style.display='block'; document.getElementById('logoStatus').innerText='Logo uploaded from phone ✅';}
-  else{logoImg.style.display='none'; document.getElementById('logoStatus').innerText='No logo yet - showing text';}
-  let sg=document.getElementById('servicesGrid'); sg.innerHTML='';
-  let qs=document.getElementById('quickService'); qs.innerHTML='';
-  services.forEach(s=>{sg.innerHTML+=`<div class="card"><div style="font-size:32px">${s.icon}</div><h3>${s.name}</h3><div class="price">R${s.price}</div><p>${s.desc1}</p><p>${s.desc2}</p><p>${s.desc3}</p><a class="btn" href="book.html?service=${encodeURIComponent(s.name)}">Book ${s.name}</a></div>`; qs.innerHTML+=`<option>${s.name} — R${s.price}</option>`;});
-  let g=document.getElementById('galleryGrid'); g.innerHTML='';
-  document.getElementById('galleryEmpty').style.display=photos.length?'none':'block';
-  photos.forEach(p=>{g.innerHTML+=`<div><img src="${p.img}"><p style="font-size:12px;text-align:center">${p.cap}</p></div>`});
-  let t=document.getElementById('teamGrid'); t.innerHTML='';
-  team.forEach(m=>{t.innerHTML+=`<div class="member"><img src="${m.img||'https://cdn-icons-png.flaticon.com/512/2922/2922510.png'}"><b>${m.name}</b><span style="font-size:13px;color:#777">${m.role}</span></div>`});
-  if(special.on){document.getElementById('specialBanner').style.display='block';document.getElementById('specialText').innerText=special.text;}else{document.getElementById('specialBanner').style.display='none';}
-  document.getElementById('specialOn').checked=special.on; document.getElementById('specialInput').value=special.text;
-  let pe=document.getElementById('priceEditor'); pe.innerHTML='';
-  services.forEach(s=>{pe.innerHTML+=`<div class="price-edit"><label>${s.icon} ${s.name}</label><input type="number" id="price_${s.id}" value="${s.price}"></div>`});
+function getData(){try{return JSON.parse(localStorage.getItem('dees_data'))||null}catch(e){return null}}
+let d=getData()||{phone:'27730126925',displayPhone:'073 012 6925',motive:'Festive season is here — deep cleaning, office cleaning, windows, ironing & more in Parow Valley & surrounds. We clean with love, like it\'s our own home. Open daily 08:00 - 18:00.',motive2:"We believe a clean home = a calm mind. Dee started this business to help busy moms, working families and offices in Parow Valley & Cape Town have a little more time, and a little less stress. We clean with love, care and pride — like it's our own home.",special:true,services:[{n:'Deep Cleaning',p:'R400',d:'Full deep clean — kitchen, bathroom, floors, walls. We bring all products & equipment.',img:'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80'},{n:'Outside Area Cleaning',p:'R350',d:'Yard, stoep, patio, braai area & outside walls',img:'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80'},{n:'Office Cleaning',p:'R400',d:'Offices, shops & small businesses — daily, weekly or once-off',img:'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80'},{n:'Windows Cleaning',p:'R200',d:'Inside & outside windows sparkling, no streaks',img:'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=80'},{n:'Ironing',p:'R200',d:'Neat ironing, folded & ready — shirts, uniforms & bedding',img:'https://images.unsplash.com/photo-1489274495757-95c7c837b101?w=600&q=80'},{n:'Move In & Move Out',p:'R400',d:'Empty house clean before you move in / get your deposit back',img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80'}],photos:['https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80','https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=600&q=80','https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?w=600&q=80','https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=80'],team:[{n:'Dee',r:'Owner & Founder',img:'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80'},{n:'Team Member',r:'Cleaner',img:'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80'}]};
+let pass=localStorage.getItem('dees_pass')||'dee1234';
+function renderPublic(){
+if(d.special)document.getElementById('specialBanner').style.display='block';else document.getElementById('specialBanner').style.display='none';
+document.getElementById('motiveText').innerText=d.motive;document.getElementById('motive2').innerText=d.motive2;
+document.getElementById('phoneTop').innerText=d.displayPhone;document.getElementById('phoneText2').innerText=d.displayPhone;
+let wa='https://wa.me/'+d.phone;document.getElementById('waNav').href=wa;document.getElementById('waHero').href=wa+'?text=Hi%20Dee%2C%20I%20want%20a%20cleaning%20quote';document.getElementById('waBottom').href=wa+'?text=Hi%20Dee%2C%20I%20want%20a%20cleaning%20quote%20in%20Parow%20Valley';document.getElementById('waFloat').href=wa+'?text=Hi%20Dee%2C%20I%20want%20a%20quote';document.getElementById('waFloatBtn').href=wa;
+document.getElementById('servicesGrid').innerHTML=d.services.map(s=>`<div class="service"><img src="${s.img}"><div class="service-inner"><b>${s.n}</b><div class="price">${s.p}</div><p>${s.d}</p><a class="btn btn-pink" href="${wa}?text=${encodeURIComponent('Hi Dee, I want '+s.n+' '+s.p)}">Book This →</a></div></div>`).join('');
+document.getElementById('list').innerHTML=d.services.map(s=>`<div class="row"><div><b>✔️ ${s.n}</b><small>${s.d||''}</small></div><div class="price2">${s.p}</div><a class="book" href="${wa}?text=${encodeURIComponent('Hi Dee, I want '+s.n+' '+s.p)}">Book →</a></div>`).join('');
+document.getElementById('galleryGrid').innerHTML=d.photos.map(p=>`<img src="${p}">`).join('');
+document.getElementById('teamGrid').innerHTML=d.team.map(t=>`<div class="member"><img src="${t.img}"><br><b>${t.n}</b><br><span style="font-size:12px;color:#666">${t.r}</span></div>`).join('');
 }
-function quickBook(){let s=document.getElementById('quickService').value, n=document.getElementById('quickName').value, p=document.getElementById('quickPhone').value; if(!n) return alert('Please enter your name'); window.open('https://wa.me/27730126925?text=Hi Dee! I want a quote for '+encodeURIComponent(s)+'%0AName: '+encodeURIComponent(n)+'%0APhone: '+encodeURIComponent(p));}
-function doLogin(){let ph=document.getElementById('loginPhone').value.replace(/\s/g,''), pw=document.getElementById('loginPass').value; if(ph===owner.phone && pw===owner.pass){document.getElementById('loginBox').classList.add('hidden');document.getElementById('dash').classList.remove('hidden');} else alert('Wrong phone or password.');}
-function doLogout(){document.getElementById('dash').classList.add('hidden');document.getElementById('loginBox').classList.remove('hidden');}
-
-// --- LOGO FROM PHONE FILES ---
-let tempLogo='';
-function previewLogo(){
-  let f=document.getElementById('logoInput').files[0]; if(!f) return;
-  let r=new FileReader(); r.onload=e=>{tempLogo=e.target.result; let p=document.getElementById('logoPreview'); p.src=tempLogo; p.style.display='block';}; r.readAsDataURL(f);
+function showAdmin(){document.getElementById('publicView').style.display='none';document.getElementById('adminView').style.display='block';document.getElementById('waFloatBtn').style.display='none';window.scrollTo(0,0)}
+function showPublic(){document.getElementById('adminView').style.display='none';document.getElementById('publicView').style.display='block';document.getElementById('waFloatBtn').style.display='flex';renderPublic();window.scrollTo(0,0)}
+function login(){if(document.getElementById('pass').value===pass){document.getElementById('loginBox').style.display='none';document.getElementById('dash').style.display='block';renderEdit()}else alert('Wrong password')}
+function renderEdit(){
+document.getElementById('motiveInput').value=d.motive;document.getElementById('motive2Input').value=d.motive2;document.getElementById('phoneInput').value=d.phone;document.getElementById('displayPhoneInput').value=d.displayPhone;document.getElementById('specialInput').value=String(d.special);
+document.getElementById('servicesEdit').innerHTML=d.services.map((s,i)=>`<div class="serviceBox"><label>Service ${i+1}</label><input value="${s.n}" onchange="d.services[${i}].n=this.value"><div class="row2"><input value="${s.p}" onchange="d.services[${i}].p=this.value"><input value="${s.d||''}" placeholder="Description" onchange="d.services[${i}].d=this.value"></div><button class="del" onclick="d.services.splice(${i},1);renderEdit()">Remove</button></div>`).join('');
+document.getElementById('photosEdit').innerHTML=d.photos.map((p,i)=>`<div style="display:flex;gap:8px;margin-top:8px;align-items:center"><img src="${p}" style="width:60px;height:60px;object-fit:cover;border-radius:10px"><button class="del" style="width:auto;padding:8px 14px" onclick="d.photos.splice(${i},1);renderEdit()">Delete</button></div>`).join('');
+document.getElementById('teamEdit').innerHTML=d.team.map((t,i)=>`<div class="serviceBox" style="text-align:center"><img src="${t.img}" class="team-preview"><label style="text-align:left">Name</label><input value="${t.n}" onchange="d.team[${i}].n=this.value"><label style="text-align:left">Role</label><input value="${t.r}" onchange="d.team[${i}].r=this.value"><label style="text-align:left">Team Member Picture 📸</label><input type="file" accept="image/*" onchange="upTeamPhoto(${i},this)" style="border:2px dashed #E6007E;background:#FFF0F7"><button class="del" onclick="d.team.splice(${i},1);renderEdit()">Remove Member</button></div>`).join('');
 }
-function uploadLogo(){
-  if(!tempLogo) return alert('First tap Choose File and pick a logo from your phone Gallery / Files');
-  savedLogo=tempLogo; localStorage.setItem('dees_logo',savedLogo); renderAll();
-  document.getElementById('ownerMsg').innerText='Logo uploaded from your phone! ✅ It now shows at the top.';
-}
-function removeLogo(){savedLogo=''; tempLogo=''; localStorage.removeItem('dees_logo'); document.getElementById('logoPreview').style.display='none'; renderAll(); document.getElementById('ownerMsg').innerText='Logo removed. Showing text only.';}
-function savePrices(){services.forEach(s=>{let v=document.getElementById('price_'+s.id).value; if(v) s.price=Number(v);}); localStorage.setItem('dees_services',JSON.stringify(services)); renderAll(); document.getElementById('ownerMsg').innerText='Prices updated! ✅';}
-function addPhoto(){let f=document.getElementById('photoInput').files[0]; if(!f) return alert('Choose a photo from your phone first'); let r=new FileReader(); r.onload=e=>{photos.push({img:e.target.result,cap:document.getElementById('photoCaption').value||"Dee's Cleaning Work"});localStorage.setItem('dees_photos',JSON.stringify(photos));renderAll();document.getElementById('ownerMsg').innerText='Photo added! ✅';}; r.readAsDataURL(f);}
-function clearPhotos(){if(confirm('Delete all photos?')){photos=[];localStorage.setItem('dees_photos','[]');renderAll();}}
-function addMember(){let n=document.getElementById('teamName').value; if(!n) return alert('Enter name'); team.push({name:n,role:document.getElementById('teamRole').value||'Cleaner',img:''}); localStorage.setItem('dees_team',JSON.stringify(team)); renderAll(); document.getElementById('ownerMsg').innerText='Team member added! ✅';}
-function clearTeam(){if(confirm('Clear team?')){team=[];localStorage.setItem('dees_team','[]');renderAll();}}
-function saveSpecial(){special={on:document.getElementById('specialOn').checked,text:document.getElementById('specialInput').value}; localStorage.setItem('dees_special',JSON.stringify(special)); renderAll(); document.getElementById('ownerMsg').innerText='Special saved! ✅';}
-function changePass(){if(document.getElementById('newPhone').value.replace(/\s/g,'')!==owner.phone) return alert('Phone does not match. Use 0730126925'); let np=document.getElementById('newPass').value; if(np.length<4) return alert('Password too short'); owner.pass=np; localStorage.setItem('dees_owner',JSON.stringify(owner)); document.getElementById('ownerMsg').innerText='Password changed! ✅';}
-renderAll();
+function addService(){d.services.push({n:'New Service',p:'R0',d:'',img:'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80'});renderEdit()}
+function addMember(){d.team.push({n:'New Member',r:'Cleaner',img:''});renderEdit()}
+function addPhoto(el){let r=new FileReader();r.onload=e=>{d.photos.push(e.target.result);renderEdit()};r.readAsDataURL(el.files[0])}
+function upTeamPhoto(i,el){if(!el.files||!el.files[0])return;let r=new FileReader();r.onload=e=>{d.team[i].img=e.target.result;renderEdit()};r.readAsDataURL(el.files[0])}
+function changePass(){let n=document.getElementById('newPass').value;if(!n)return alert('Type new password');localStorage.setItem('dees_pass',n);pass=n;alert('Password changed to: '+n)}
+function save(){d.motive=document.getElementById('motiveInput').value;d.motive2=document.getElementById('motive2Input').value;d.phone=document.getElementById('phoneInput').value;d.displayPhone=document.getElementById('displayPhoneInput').value;d.special=document.getElementById('specialInput').value==='true';localStorage.setItem('dees_data',JSON.stringify(d));alert('Saved!');renderPublic()}
+renderPublic();
 </script></body></html>
