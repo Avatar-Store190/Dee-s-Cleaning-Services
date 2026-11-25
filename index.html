@@ -9,13 +9,7 @@ body{background:var(--light);color:#111}
 .topbar{background:#0A0A0A;color:#fff;padding:8px 14px;display:flex;justify-content:space-between;align-items:center;font-size:12px}
 .topbar a{color:#fff;text-decoration:none;font-weight:700}
 
-/* ===== SPACE FOR LOGO - UPLOAD FROM PHONE ===== */
-.logo-space{background:#fff;text-align:center;padding:14px 10px 10px;border-bottom:1px solid #FFE0F0}
-.logo-space img{max-width:280px;max-height:120px;width:auto;height:auto;object-fit:contain;display:none;margin:0 auto;border-radius:10px}
-.logo-space .logo-placeholder{font-size:12px;font-weight:800;color:#999;letter-spacing:1px}
-.logo-space .logo-placeholder b{color:#E6007E;font-size:14px}
-
-/* ===== EMBEDDED LOGO - NO IMAGE FILE NEEDED - PURE CODE ===== */
+/* ===== EMBEDDED LOGO - PURE CODE ===== */
 .logo-banner{background:linear-gradient(180deg,#FFF0F7 0%,#FFFFFF 55%,#FFE6F3 100%);text-align:center;padding:18px 12px 16px;border-bottom:4px solid var(--pink);position:relative;overflow:hidden}
 .logo-banner:before{content:"✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨";position:absolute;top:6px;left:0;right:0;font-size:12px;opacity:.6;letter-spacing:4px}
 .logo-banner:after{content:"✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦";position:absolute;bottom:4px;left:0;right:0;font-size:12px;opacity:.5;letter-spacing:4px}
@@ -31,6 +25,12 @@ body{background:var(--light);color:#111}
 .logo-right{font-size:44px;line-height:1;text-align:center}
 .logo-right small{display:block;font-size:11px;font-weight:900;color:#E6007E;letter-spacing:1px;margin-top:2px}
 .logo-sub{font-size:11px;font-weight:900;letter-spacing:2px;color:#0A0A0A;margin-top:8px}
+
+/* ===== LOGO ON RIGHT SIDE - WHERE YOU TICKED GREEN ✅ ===== */
+#siteLogo{position:absolute;right:18px;top:50%;transform:translateY(-50%);height:130px;width:130px;object-fit:contain;display:none;z-index:3;background:#fff;border:3px solid #E6007E;border-radius:16px;padding:6px;box-shadow:0 4px 15px rgba(0,0,0,.15)}
+@media(max-width:820px){#siteLogo{position:static;transform:none;display:none;margin:10px auto 0;height:110px;width:110px}}
+@media(max-width:820px){#siteLogo.show-mobile{display:block}}
+
 .nav{position:sticky;top:0;z-index:50;background:#fff;display:flex;justify-content:center;gap:18px;padding:12px;box-shadow:0 2px 10px rgba(0,0,0,.08);flex-wrap:wrap}
 .nav a{color:#111;text-decoration:none;font-weight:800;font-size:13px}.nav a.active{color:var(--pink)}
 .btn-wa{background:#25D366;color:#fff!important;padding:10px 18px;border-radius:999px;font-size:12px;font-weight:800;text-decoration:none;display:inline-block}
@@ -40,9 +40,7 @@ body{background:var(--light);color:#111}
 .hero-left .badge{background:#FFE600;color:#000;font-weight:900;font-size:11px;padding:6px 10px;border-radius:999px;display:inline-block}
 .hero-left h1{font-size:36px;line-height:1.05;margin:14px 0}.hero-left h1 span{color:#FF8FD6}
 .hero-left p{color:#FFE6F3;font-size:14px;line-height:1.6}
-/* ===== FESTIVE TEXT - BOLD + BIGGER ===== */
 .festive-big{font-size:22px!important;font-weight:900!important;line-height:1.4;color:#FFE600!important;text-transform:uppercase;letter-spacing:.5px}
-.festive-big b{color:#fff}
 @media(max-width:600px){.festive-big{font-size:19px!important}}
 .hero-stats{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}.hero-stats div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:10px 12px;border-radius:12px;text-align:center;flex:1;min-width:90px}.hero-stats b{font-size:18px;display:block}.hero-stats small{font-size:11px;color:#FFC2E0}
 .hero-right{position:relative;min-height:280px;background:#ddd}
@@ -90,13 +88,7 @@ body{background:var(--light);color:#111}
 <div id="publicView">
 <div class="topbar"><span>📍 67 Piet Retief Street, Parow Valley • Cape Town</span><span>📱 <span id="phoneTop">073 012 6925</span> • 🕐 08:00-18:00</span><a href="https://wa.me/27730126925">WhatsApp Us →</a></div>
 
-<!-- ===== SPACE FOR LOGO - SHOWS UPLOADED LOGO HERE ===== -->
-<div class="logo-space">
-  <img id="siteLogo" src="" alt="Dee's Logo">
-  <div class="logo-placeholder" id="logoPlaceholder"><b>DEE'S CLEANING SERVICES</b><br>Logo space — Dee can upload her logo in Owner Login</div>
-</div>
-
-<!-- EMBEDDED LOGO - PURE CODE -->
+<!-- EMBEDDED LOGO BANNER + UPLOADED LOGO ON RIGHT SIDE -->
 <div class="logo-banner">
   <div class="logo-row">
     <div class="logo-left">🪣<br><small>SPARKLE</small></div>
@@ -108,6 +100,8 @@ body{background:var(--light);color:#111}
     <div class="logo-right">🏠<br><small>PAROW VALLEY</small></div>
   </div>
   <div class="logo-sub">✨ PAROW VALLEY • WESTERN CAPE • CAPE TOWN ✨</div>
+  <!-- LOGO GOES HERE - RIGHT SIDE WHERE YOU TICKED -->
+  <img id="siteLogo" src="" alt="Dee's Logo">
 </div>
 
 <div class="nav"><a class="active" href="#top">Home</a><a href="#services">Services</a><a href="services.html">All Prices</a><a href="#work">Our Work</a><a href="#team">Team</a><a href="#reviews">Reviews</a><a class="btn-wa" id="waNav" href="https://wa.me/27730126925">Book Now</a></div>
@@ -116,7 +110,6 @@ body{background:var(--light);color:#111}
 <div class="hero-left">
 <span class="badge">✨ PAROW VALLEY'S TRUSTED CLEANING TEAM • SAME-DAY BOOKING • 08:00-18:00</span>
 <h1>Your Home, <span>Sparkling Clean.</span><br>Your Day, Easier.</h1>
-<!-- FESTIVE TEXT - BOLD + BIGGER -->
 <p id="motiveText" class="festive-big">🎄 FESTIVE SEASON IS HERE — DEEP CLEANING, OFFICE CLEANING, WINDOWS, IRONING & MORE IN PAROW VALLEY! 🎄</p>
 <p style="color:#FFE6F3;font-size:14px;line-height:1.6;margin-top:10px">We clean with love, like it's our own home. Open daily 08:00 - 18:00.</p>
 <div class="special" id="specialBanner">🎄 <b>FESTIVE SPECIAL ON!</b><br>Ask on WhatsApp for today's special price!</div>
@@ -155,19 +148,16 @@ body{background:var(--light);color:#111}
 <div id="adminView">
 <div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #FFD6EC" id="loginBox"><h2 style="color:#E6007E">Owner Login 🔒</h2><p class="small">Only Dee can enter. Default password: <b>dee1234</b></p><label>Password</label><input id="pass" type="password" placeholder="Enter password"><button onclick="login()">Login</button><p class="small" style="text-align:center;margin-top:10px"><a href="#" onclick="showPublic();return false">← Back to website</a></p></div>
 <div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #FFD6EC;display:none" id="dash">
-<h2 style="color:#E6007E">Dee's Dashboard 💖</h2><p class="small">Logo is built into the code — no file to upload. Change anything, click SAVE.</p>
-
-<!-- ===== LOGO UPLOAD FROM PHONE'S FILES ===== -->
-<h3 style="margin-top:16px">🖼️ Logo — Upload From Phone Files</h3>
-<p class="small">Tap Choose File → Gallery / Files → pick your logo. It will show in the logo space at the top.</p>
+<h2 style="color:#E6007E">Dee's Dashboard 💖</h2>
+<h3 style="margin-top:16px">🖼️ Logo — Shows on RIGHT side of banner</h3>
+<p class="small">Tap Choose File → Gallery / Files → pick your logo → Upload This Logo. It will show where you ticked green.</p>
 <img id="logoPreview" class="logo-preview" alt="Logo preview">
 <input type="file" id="logoInput" accept="image/*" onchange="previewLogo()" style="border:2px dashed #E6007E;background:#FFF0F7">
 <button onclick="uploadLogo()" style="background:#000">✅ Upload This Logo</button>
 <button class="del" onclick="removeLogo()">❌ Remove Logo</button>
 <p class="small">Status: <span id="logoStatus">No logo yet</span></p>
-
 <label>Motive / About Text (Home)</label><textarea id="motive2Input" rows="3"></textarea>
-<label>Festive / Top Banner Text (Hero) — This is now BOLD + BIG</label><textarea id="motiveInput" rows="2"></textarea>
+<label>Festive / Top Banner Text (Hero) — BOLD + BIG</label><textarea id="motiveInput" rows="2"></textarea>
 <label>WhatsApp Number (without + , e.g. 27730126925)</label><input id="phoneInput">
 <label>Display Number (e.g. 073 012 6925)</label><input id="displayPhoneInput">
 <label>🎄 Festive Special? Show special banner?</label><select id="specialInput"><option value="true">YES - Show Special</option><option value="false">NO - Hide Special</option></select>
@@ -186,9 +176,9 @@ let pass=localStorage.getItem('dees_pass')||'dee1234';
 let savedLogo=localStorage.getItem('dees_logo')||'';
 let tempLogo='';
 function renderLogo(){
-  let img=document.getElementById('siteLogo'); let ph=document.getElementById('logoPlaceholder');
-  if(savedLogo){img.src=savedLogo; img.style.display='block'; ph.style.display='none'; document.getElementById('logoStatus').innerText='Logo uploaded from phone ✅';}
-  else{img.style.display='none'; ph.style.display='block'; document.getElementById('logoStatus').innerText='No logo yet';}
+  let img=document.getElementById('siteLogo');
+  if(savedLogo){img.src=savedLogo; img.style.display='block'; img.classList.add('show-mobile'); document.getElementById('logoStatus').innerText='Logo uploaded ✅ - showing on right side';}
+  else{img.style.display='none'; img.classList.remove('show-mobile'); document.getElementById('logoStatus').innerText='No logo yet';}
 }
 function renderPublic(){
 if(d.special)document.getElementById('specialBanner').style.display='block';else document.getElementById('specialBanner').style.display='none';
@@ -212,7 +202,7 @@ document.getElementById('teamEdit').innerHTML=d.team.map((t,i)=>`<div class="ser
 renderLogo();
 }
 function previewLogo(){let f=document.getElementById('logoInput').files[0]; if(!f) return; let r=new FileReader(); r.onload=e=>{tempLogo=e.target.result; let p=document.getElementById('logoPreview'); p.src=tempLogo; p.style.display='block';}; r.readAsDataURL(f);}
-function uploadLogo(){if(!tempLogo) return alert('First tap Choose File and pick a logo from your phone Gallery / Files'); savedLogo=tempLogo; localStorage.setItem('dees_logo',savedLogo); renderLogo(); alert('Logo uploaded! ✅');}
+function uploadLogo(){if(!tempLogo) return alert('First tap Choose File and pick a logo from your phone Gallery / Files'); savedLogo=tempLogo; localStorage.setItem('dees_logo',savedLogo); renderLogo(); alert('Logo uploaded! ✅ Now showing on right side');}
 function removeLogo(){savedLogo=''; tempLogo=''; localStorage.removeItem('dees_logo'); document.getElementById('logoPreview').style.display='none'; renderLogo();}
 function addService(){d.services.push({n:'New Service',p:'R0',d:'',img:'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80'});renderEdit()}
 function addMember(){d.team.push({n:'New Member',r:'Cleaner',img:''});renderEdit()}
