@@ -8,6 +8,11 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
 :root{--pink:#C0392B;--pinkDark:#922B21;--pinkSoft:#F5B7B1;--bg:#FDEDEC;--bg2:#FDF2F2;--text:#2B2B2B;--grey:#6B6B6B}
 body{background:var(--bg);color:var(--text)}
+/* COMPANY NAME AT THE FRONT - VERY TOP */
+.company-top{background:#922B21;color:#fff;text-align:center;padding:16px 12px 14px}
+.company-top h1{font-family:Georgia,serif;font-size:32px;letter-spacing:2px;font-weight:700;line-height:1.1}
+.company-top p{font-size:12px;letter-spacing:3px;margin-top:4px;opacity:.9}
+@media(max-width:600px){.company-top h1{font-size:24px;letter-spacing:1px}}
 .header{background:var(--bg2);display:flex;align-items:center;justify-content:space-between;padding:12px 20px;position:sticky;top:0;z-index:50;border-bottom:1px solid #F5B7B1}
 .header-nav{display:flex;gap:18px;flex-wrap:wrap}
 .header-nav a{color:#333;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.5px}
@@ -84,6 +89,10 @@ body{background:var(--bg);color:var(--text)}
 .cloud-on{background:#D4FFD4;color:#006400}.cloud-off{background:#FFE0E0;color:#900}
 </style></head><body>
 <div id="publicView">
+<div class="company-top">
+  <h1>DEE'S CLEANING SERVICES</h1>
+  <p>PAROW VALLEY • CAPE TOWN • PROFESSIONAL • TRUSTED</p>
+</div>
 <div style="background:#2B2B2B;color:#fff;padding:8px 14px;display:flex;justify-content:space-between;font-size:12px"><span>📍 67 Piet Retief Street, Parow Valley • Cape Town</span><span>📱 <span id="phoneTop">073 012 6925</span> • 🕐 08:00-18:00</span></div>
 <div class="header">
   <div class="header-nav"><a class="active" href="#top">HOME</a><a href="#services">SERVICES</a><a href="#work">ABOUT</a><a href="#reviews">REVIEWS</a><a href="#contact">CONTACT</a></div>
