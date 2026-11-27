@@ -8,7 +8,6 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
 :root{--pink:#C0392B;--pinkDark:#922B21;--pinkSoft:#F5B7B1;--bg:#FDEDEC;--bg2:#FDF2F2;--text:#2B2B2B;--grey:#6B6B6B}
 body{background:var(--bg);color:var(--text)}
-/* COMPANY NAME AT THE FRONT - VERY TOP */
 .company-top{background:#922B21;color:#fff;text-align:center;padding:16px 12px 14px}
 .company-top h1{font-family:Georgia,serif;font-size:32px;letter-spacing:2px;font-weight:700;line-height:1.1}
 .company-top p{font-size:12px;letter-spacing:3px;margin-top:4px;opacity:.9}
@@ -47,19 +46,20 @@ body{background:var(--bg);color:var(--text)}
 .services-sec{background:#FDF2F2;padding:30px 14px 40px;margin-top:26px}
 .services-sec h2{font-family:Georgia,serif;font-size:34px;text-align:center;font-weight:400}
 .services-sec p.sub2{text-align:center;color:#555;font-size:14px;margin-top:6px}
-.services-grid{max-width:1100px;margin:20px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.services-grid{max-width:1100px;margin:20px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.services-grid{grid-template-columns:1fr}}
-.service-card{background:#fff;border:1px solid #F5B7B1;border-radius:16px;padding:20px 14px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.04)}
-.service-card .icon{font-size:36px}
-.service-card img{width:100%;height:110px;object-fit:cover;border-radius:12px;margin-top:10px}
-.service-card h3{font-family:Georgia,serif;font-size:20px;margin-top:10px;font-weight:400}
-.service-card p{font-size:13px;color:#555;line-height:1.6;margin-top:8px}
+.service-card{background:#fff;border:1px solid #F5B7B1;border-radius:16px;padding:0 0 16px;overflow:hidden;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.04)}
+.service-card .icon{font-size:30px;margin-top:12px}
+.service-card img{width:100%;height:160px;object-fit:cover;display:block}
+.service-card h3{font-family:Georgia,serif;font-size:20px;margin-top:10px;font-weight:400;padding:0 12px}
+.service-card p{font-size:13px;color:#555;line-height:1.6;margin-top:8px;padding:0 12px}
 .service-card .price{color:var(--pinkDark);font-size:22px;font-weight:900;margin-top:8px}
 .service-card a{color:#C0392B;font-size:13px;text-decoration:none;font-weight:700;display:inline-block;margin-top:10px}
 .wrap{max-width:1100px;margin:0 auto;padding:20px 14px}
 .card{background:#fff;border-radius:18px;padding:18px;margin-top:14px;border:1px solid #F5B7B1}
 .row{background:#fff;border-radius:14px;padding:12px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #F5B7B1}.row b{font-size:14px}.row small{color:#666;display:block}.price2{color:var(--pinkDark);font-size:19px;font-weight:900;white-space:nowrap}.book{background:#2B2B2B;color:#fff;padding:9px 14px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
+.row-thumb{width:64px;height:64px;object-fit:cover;border-radius:10px;flex-shrink:0;border:1px solid #F5B7B1}
 .why{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
 @media(max-width:760px){.why{grid-template-columns:repeat(2,1fr)}}
 .why div{background:#fff;border-radius:14px;padding:14px;text-align:center;border:1px solid #F5B7B1}.why b{display:block;margin:6px 0 4px}.why p{font-size:12px;color:#666}
@@ -189,8 +189,8 @@ if(d.special)document.getElementById('specialBanner').style.display='block';else
 document.getElementById('motiveText').innerText=d.motive;document.getElementById('motive2').innerText=d.motive2;
 document.getElementById('phoneTop').innerText=d.displayPhone;document.getElementById('phoneText2').innerText=d.displayPhone;
 let wa='https://wa.me/'+d.phone;document.getElementById('waNav').href=wa;document.getElementById('waHero').href=wa+'?text=Hi%20Dee%2C%20I%20want%20a%20cleaning%20quote';document.getElementById('waBottom').href=wa+'?text=Hi%20Dee%2C%20I%20want%20a%20cleaning%20quote%20in%20Parow%20Valley';document.getElementById('waFloatBtn').href=wa;
-document.getElementById('servicesGrid').innerHTML=d.services.slice(0,4).map(s=>`<div class="service-card"><div class="icon">${s.icon||'🏠'}</div><h3>${s.n}</h3><p>${s.d}</p><div class="price">${s.p}</div><a href="${wa}?text=${encodeURIComponent('Hi Dee, I want '+s.n+' '+s.p)}">Learn more →</a></div>`).join('');
-document.getElementById('list').innerHTML=d.services.map(s=>`<div class="row"><div><b>✔️ ${s.n}</b><small>${s.d||''}</small></div><div class="price2">${s.p}</div><a class="book" href="${wa}?text=${encodeURIComponent('Hi Dee, I want '+s.n+' '+s.p)}">Book →</a></div>`).join('');
+document.getElementById('servicesGrid').innerHTML=d.services.map(s=>`<div class="service-card">${s.img?`<img src="${s.img}" alt="${s.n}">`:''}<div class="icon">${s.icon||'🏠'}</div><h3>${s.n}</h3><p>${s.d}</p><div class="price">${s.p}</div><a href="${wa}?text=${encodeURIComponent('Hi Dee, I want '+s.n+' '+s.p)}">Book This →</a></div>`).join('');
+document.getElementById('list').innerHTML=d.services.map(s=>`<div class="row"><div style="display:flex;gap:10px;align-items:center">${s.img?`<img class="row-thumb" src="${s.img}">`:''}<div><b>✔️ ${s.n}</b><small>${s.d||''}</small></div></div><div style="display:flex;align-items:center;gap:10px"><div class="price2">${s.p}</div><a class="book" href="${wa}?text=${encodeURIComponent('Hi Dee, I want '+s.n+' '+s.p)}">Book →</a></div></div>`).join('');
 buildProof();
 document.getElementById('teamGrid').innerHTML=d.team.map(t=>`<div class="member"><img src="${t.img}"><br><b>${t.n}</b><br><span style="font-size:12px;color:#666">${t.r}</span></div>`).join('');
 renderLogo();
@@ -200,7 +200,7 @@ function showPublic(){document.getElementById('adminView').style.display='none';
 function login(){if(document.getElementById('pass').value===pass){document.getElementById('loginBox').style.display='none';document.getElementById('dash').style.display='block';renderEdit()}else alert('Wrong password')}
 function renderEdit(){
 document.getElementById('motiveInput').value=d.motive;document.getElementById('motive2Input').value=d.motive2;document.getElementById('phoneInput').value=d.phone;document.getElementById('displayPhoneInput').value=d.displayPhone;document.getElementById('specialInput').value=String(d.special);
-document.getElementById('servicesEdit').innerHTML=d.services.map((s,i)=>`<div class="serviceBox"><label>Service ${i+1}</label><input value="${s.n}" onchange="d.services[${i}].n=this.value"><div class="row2"><input value="${s.p}" onchange="d.services[${i}].p=this.value"><input value="${s.d||''}" placeholder="Description" onchange="d.services[${i}].d=this.value"></div><button class="del" onclick="d.services.splice(${i},1);renderEdit()">Remove</button></div>`).join('');
+document.getElementById('servicesEdit').innerHTML=d.services.map((s,i)=>`<div class="serviceBox"><label>Service ${i+1}</label><input value="${s.n}" onchange="d.services[${i}].n=this.value"><div class="row2"><input value="${s.p}" onchange="d.services[${i}].p=this.value"><input value="${s.d||''}" placeholder="Description" onchange="d.services[${i}].d=this.value"></div><label>Demo Picture Link</label><input value="${s.img||''}" placeholder="Paste image link" onchange="d.services[${i}].img=this.value"><label>Service Demo Picture 📸</label><input type="file" accept="image/*" onchange="upServicePhoto(${i},this)" style="border:2px dashed #C0392B;background:#FDEDEC">${s.img?`<img src="${s.img}" style="width:100%;height:100px;object-fit:cover;border-radius:10px;margin-top:8px">`:''}<button class="del" onclick="d.services.splice(${i},1);renderEdit()">Remove</button></div>`).join('');
 document.getElementById('photosEdit').innerHTML=d.photos.map((p,i)=>`<div style="display:flex;gap:8px;margin-top:8px;align-items:center"><img src="${p}" style="width:60px;height:60px;object-fit:cover;border-radius:10px"><button class="del" style="width:auto;padding:8px 14px" onclick="d.photos.splice(${i},1);renderEdit()">Delete</button></div>`).join('');
 document.getElementById('teamEdit').innerHTML=d.team.map((t,i)=>`<div class="serviceBox" style="text-align:center"><img src="${t.img}" class="team-preview"><label style="text-align:left">Name</label><input value="${t.n}" onchange="d.team[${i}].n=this.value"><label style="text-align:left">Role</label><input value="${t.r}" onchange="d.team[${i}].r=this.value"><label style="text-align:left">Team Member Picture 📸</label><input type="file" accept="image/*" onchange="upTeamPhoto(${i},this)" style="border:2px dashed #C0392B;background:#FDEDEC"><button class="del" onclick="d.team.splice(${i},1);renderEdit()">Remove Member</button></div>`).join('');
 renderLogo();
@@ -211,6 +211,7 @@ async function removeLogo(){savedLogo='';tempLogo='';document.getElementById('lo
 function addService(){d.services.push({n:'New Service',p:'R0',d:'',img:'',icon:'✨'});renderEdit()}
 function addMember(){d.team.push({n:'New Member',r:'Cleaner',img:''});renderEdit()}
 function addPhoto(el){let r=new FileReader();r.onload=e=>{d.photos.push(e.target.result);renderEdit()};r.readAsDataURL(el.files[0])}
+function upServicePhoto(i,el){if(!el.files||!el.files[0])return;let r=new FileReader();r.onload=e=>{d.services[i].img=e.target.result;renderEdit()};r.readAsDataURL(el.files[0])}
 function upTeamPhoto(i,el){if(!el.files||!el.files[0])return;let r=new FileReader();r.onload=e=>{d.team[i].img=e.target.result;renderEdit()};r.readAsDataURL(el.files[0])}
 async function changePass(){let n=document.getElementById('newPass').value;if(!n)return alert('Type new password');pass=n;localStorage.setItem('dees_pass',n);await saveToCloud();alert('Password changed in cloud: '+n)}
 async function save(){d.motive=document.getElementById('motiveInput').value;d.motive2=document.getElementById('motive2Input').value;d.phone=document.getElementById('phoneInput').value;d.displayPhone=document.getElementById('displayPhoneInput').value;d.special=document.getElementById('specialInput').value==='true';await saveToCloud();alert(cloudOn?'Saved to CLOUD! ✅ All customers see it now':'Saved locally');renderPublic()}
