@@ -4,29 +4,29 @@
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}body{background:#FFF5F9}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}body{background:#FDEDEC}
 .header{position:sticky;top:0;background:#2B2B2B;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center}
 .header a{color:#fff;text-decoration:none;font-weight:700;font-size:12px;margin-left:12px}
 .btn-wa{background:#25D366;color:#fff;padding:10px 16px;border-radius:999px;font-weight:800;text-decoration:none;font-size:12px}
-.logo-space{background:#fff;text-align:center;padding:14px 10px 10px;border-bottom:4px solid #D63384}
-.logo-space img{max-width:280px;max-height:120px;width:auto;height:auto;object-fit:contain;display:none;margin:0 auto;border-radius:10px;border:3px solid #D63384;padding:6px;background:#FFF5F9}
+.logo-space{background:#fff;text-align:center;padding:14px 10px 10px;border-bottom:4px solid #C0392B}
+.logo-space img{max-width:280px;max-height:120px;width:auto;height:auto;object-fit:contain;display:none;margin:0 auto;border-radius:10px;border:3px solid #C0392B;padding:6px;background:#FDEDEC}
 .logo-space img.show{display:block}
 .logo-space .logo-placeholder{font-size:12px;font-weight:800;color:#999;letter-spacing:1px}
-.logo-space .logo-placeholder b{color:#D63384;font-size:14px}
-.hero{background:#D63384;color:#fff;text-align:center;padding:26px 16px}.hero h1{font-size:28px}
+.logo-space .logo-placeholder b{color:#C0392B;font-size:14px}
+.hero{background:#C0392B;color:#fff;text-align:center;padding:26px 16px}.hero h1{font-size:28px}
 .festive-big{font-size:22px!important;font-weight:900!important;line-height:1.4;text-transform:uppercase;letter-spacing:.5px}
 @media(max-width:600px){.festive-big{font-size:19px!important}}
-.wrap{max-width:900px;margin:0 auto;padding:16px}.row{background:#fff;border-radius:16px;padding:14px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #FCE4EC}.row b{font-size:15px}.row small{color:#666;display:block}.price{color:#D63384;font-size:20px;font-weight:900;white-space:nowrap}.book{background:#000;color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
+.wrap{max-width:900px;margin:0 auto;padding:16px}.row{background:#fff;border-radius:16px;padding:14px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #F5B7B1}.row b{font-size:15px}.row small{color:#666;display:block}.price{color:#C0392B;font-size:20px;font-weight:900;white-space:nowrap}.book{background:#000;color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
 .special{background:#FFE600;color:#000;text-align:center;font-weight:900;padding:14px;border-radius:14px;margin-top:14px;display:none;font-size:20px;line-height:1.4;border:3px solid #000}
 .special b{font-size:22px}
 @media(max-width:600px){.special{font-size:17px}.special b{font-size:19px}}
 .card{background:#fff;border-radius:16px;padding:16px;margin-top:14px}.card p{font-size:13px;line-height:1.6;color:#444;margin-top:6px}
-.female-quote{background:linear-gradient(135deg,#FFF5F9,#FCE4EC);border:2px solid #D63384;border-radius:18px;padding:22px 16px;text-align:center;margin-top:20px}
-.female-quote h3{color:#D63384;font-size:20px;font-style:italic;line-height:1.4}
+.female-quote{background:linear-gradient(135deg,#FDEDEC,#FADBD8);border:2px solid #C0392B;border-radius:18px;padding:22px 16px;text-align:center;margin-top:20px}
+.female-quote h3{color:#C0392B;font-size:20px;font-style:italic;line-height:1.4}
 .female-quote p{font-size:13px;color:#555;margin-top:6px}
 .footer{text-align:center;padding:20px;font-size:11px;color:#888}
 </style></head><body>
-<div class="header"><div><b>DEE'S</b> <span style="color:#F06292">CLEANING</span></div><div><a href="index.html">Home</a><a href="services.html">Services</a></div><a class="btn-wa" id="waTop" href="https://wa.me/27730126925">WhatsApp</a></div>
+<div class="header"><div><b>DEE'S</b> <span style="color:#EC7063">CLEANING</span></div><div><a href="index.html">Home</a><a href="services.html">Services</a></div><a class="btn-wa" id="waTop" href="https://wa.me/27730126925">WhatsApp</a></div>
 <div class="logo-space">
   <img id="siteLogo" src="" alt="Dee's Logo">
   <div class="logo-placeholder" id="logoPlaceholder"><b>DEE'S CLEANING SERVICES</b><br>Logo space — Upload logo in Owner Login on Home page</div>
