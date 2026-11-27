@@ -118,7 +118,7 @@ body{background:var(--bg);color:var(--text)}
 </div>
 
 <!-- PROOF - AUTO SLIDE 10 SEC - 3 CARDS -->
-<div class="proof-title">CLEANING PROOF • BEFORE & AFTER</div>
+<div class="proof-title">CLEANING PROOF </div>
 <div class="proof-wrap" id="work">
   <div class="proof-track" id="proofTrack"></div>
   <button class="proof-btn proof-prev" onclick="moveProof(-1)">‹</button>
@@ -148,7 +148,7 @@ body{background:var(--bg);color:var(--text)}
   <h3>"Proudly 100% Female Owned Business"</h3>
   <p>© 2024 Dee's Cleaning Services • Licensed • Insured • 5★ Rated • 67 Piet Retief Street, Parow Valley</p>
 </div>
-<div class="footer-small">Dee's Cleaning Services • <a onclick="showAdmin()">Owner Login 🔒</a><br>Website Built by Avatar Web-Store</div>
+<div class="footer-small">Dee's Cleaning Services • <a onclick="showAdmin()">Owner Login 🔒</a><br>Built by Avatar Web-Store</div>
 </div>
 
 <a class="floating-wa" id="waFloatBtn" href="https://wa.me/27730126925">💬</a>
@@ -185,7 +185,7 @@ function saveToCloud(){if(!cloudOn){localStorage.setItem('dees_data',JSON.string
 function renderLogo(){let img=document.getElementById('siteLogo');let fb=document.getElementById('logoFallback');if(savedLogo){img.src=savedLogo;img.classList.add('show');fb.style.display='none';let s=document.getElementById('logoStatus');if(s)s.innerText='Logo in cloud ✅ - showing TOP MIDDLE';}else{img.classList.remove('show');fb.style.display='flex';}}
 function buildProof(){
 let track=document.getElementById('proofTrack');let dots=document.getElementById('proofDots');if(!track)return;
-let titles=['Living Room • Before & After','Kitchen • Before & After','Bathroom • Before & After','Bedroom • Before & After','Office • Before & After','Deep Clean • Before & After'];
+let titles=['Living Room','Kitchen','Bathroom','Bedroom','Office','Deep Clean','Windows];
 track.innerHTML=d.photos.map((p,i)=>`<div class="proof-card"><img src="${p}"><div class="tag">${titles[i%titles.length]}</div><div class="before">BEFORE</div><div class="after">AFTER</div></div>`).join('');
 dots.innerHTML=d.photos.map((_,i)=>`<span onclick="goProof(${i})" class="${i===0?'active':''}"></span>`).join('');
 proofIndex=0;updateProof();
