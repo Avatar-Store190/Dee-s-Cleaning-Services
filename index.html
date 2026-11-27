@@ -6,80 +6,80 @@
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-:root{--pink:#C96F7E;--pinkDark:#B85C6E;--pinkSoft:#F8D7DD;--bg:#FDF2F4;--bg2:#FFF9FA;--text:#2B2B2B;--grey:#6B6B6B}
+:root{--pink:#C0392B;--pinkDark:#922B21;--pinkSoft:#F5B7B1;--bg:#FDEDEC;--bg2:#FDF2F2;--text:#2B2B2B;--grey:#6B6B6B}
 body{background:var(--bg);color:var(--text)}
-.header{background:var(--bg2);display:flex;align-items:center;justify-content:space-between;padding:12px 20px;position:sticky;top:0;z-index:50;border-bottom:1px solid #F5D6DC}
+.header{background:var(--bg2);display:flex;align-items:center;justify-content:space-between;padding:12px 20px;position:sticky;top:0;z-index:50;border-bottom:1px solid #F5B7B1}
 .header-nav{display:flex;gap:18px;flex-wrap:wrap}
 .header-nav a{color:#333;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.5px}
 .header-nav a.active{color:var(--pinkDark)}
 .header-logo{text-align:center}
-.header-logo img{width:110px;height:110px;object-fit:contain;border-radius:50%;border:3px solid #F2B8C6;background:#FDECEF;padding:8px;display:none;margin:0 auto}
+.header-logo img{width:110px;height:110px;object-fit:contain;border-radius:50%;border:3px solid #F5B7B1;background:#FDEDEC;padding:8px;display:none;margin:0 auto}
 .header-logo img.show{display:block}
-.header-logo .logo-text{font-family:Georgia,serif;font-size:18px;color:#C96F7E;line-height:1.1;font-weight:700}
-.header-logo .logo-text small{display:block;font-size:11px;letter-spacing:1px;color:#C96F7E}
-.header-logo .logo-fallback{width:110px;height:110px;border-radius:50%;background:#F8D7DD;display:flex;align-items:center;justify-content:center;margin:0 auto;font-family:Georgia,serif;color:#A85A6B;font-weight:700;font-size:16px;line-height:1.2;text-align:center;border:3px solid #F2B8C6}
+.header-logo .logo-text{font-family:Georgia,serif;font-size:18px;color:#C0392B;line-height:1.1;font-weight:700}
+.header-logo .logo-text small{display:block;font-size:11px;letter-spacing:1px;color:#C0392B}
+.header-logo .logo-fallback{width:110px;height:110px;border-radius:50%;background:#FADBD8;display:flex;align-items:center;justify-content:center;margin:0 auto;font-family:Georgia,serif;color:#922B21;font-weight:700;font-size:16px;line-height:1.2;text-align:center;border:3px solid #F5B7B1}
 .btn-quote{background:var(--pink);color:#fff!important;padding:10px 20px;border-radius:999px;font-size:13px;font-weight:800;text-decoration:none}
 @media(max-width:760px){.header{flex-direction:column;gap:10px}.header-nav{justify-content:center}}
 .hero{text-align:center;padding:36px 16px 20px;max-width:1100px;margin:0 auto}
 .hero h1{font-family:Georgia,serif;font-size:52px;font-weight:400;line-height:1.05;color:#2B2B2B}
 @media(max-width:600px){.hero h1{font-size:36px}}
-.hero p.sub{color:#C96F7E;font-size:15px;margin-top:10px}
+.hero p.sub{color:#C0392B;font-size:15px;margin-top:10px}
 .hero-btns{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn-pink{background:var(--pink);color:#fff;padding:12px 22px;border-radius:999px;font-weight:800;text-decoration:none;font-size:14px;display:inline-block}
-.btn-outline{background:#fff;color:#333;padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;font-size:14px;border:1.5px solid #E8B4BE;display:inline-block}
+.btn-outline{background:#fff;color:#333;padding:12px 22px;border-radius:999px;font-weight:700;text-decoration:none;font-size:14px;border:1.5px solid #F5B7B1;display:inline-block}
 .motive-banner{background:#FFE600;color:#000;font-weight:900;padding:12px;border-radius:12px;margin:18px auto 0;max-width:900px;font-size:15px;line-height:1.4;border:2px solid #000;display:none}
 .special{background:#FFE600;color:#000;font-weight:900;padding:12px;border-radius:12px;margin:12px auto 0;max-width:900px;font-size:16px;display:none;border:2px solid #000}
-.proof-title{text-align:center;margin-top:26px;font-size:13px;letter-spacing:2px;color:#C96F7E;font-weight:700}
+.proof-title{text-align:center;margin-top:26px;font-size:13px;letter-spacing:2px;color:#C0392B;font-weight:700}
 .proof-wrap{max-width:1100px;margin:14px auto 0;padding:0 14px;position:relative;overflow:hidden}
 .proof-track{display:flex;transition:transform .6s ease;gap:14px}
-.proof-card{flex:0 0 calc(33.333% - 10px);background:#fff;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 4px 18px rgba(0,0,0,.06);border:1px solid #F5D6DC}
+.proof-card{flex:0 0 calc(33.333% - 10px);background:#fff;border-radius:16px;overflow:hidden;position:relative;box-shadow:0 4px 18px rgba(0,0,0,.06);border:1px solid #F5B7B1}
 @media(max-width:760px){.proof-card{flex:0 0 calc(100% - 0px)}}
 .proof-card img{width:100%;height:210px;object-fit:cover;display:block}
-.proof-card .tag{position:absolute;top:10px;left:50%;transform:translateX(-50%);background:#FDECEF;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
-.proof-btn{position:absolute;top:50%;transform:translateY(-50%);background:#FDECEF;border:none;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;color:#C96F7E;font-weight:900;z-index:2}
+.proof-card .tag{position:absolute;top:10px;left:50%;transform:translateX(-50%);background:#FDEDEC;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.proof-btn{position:absolute;top:50%;transform:translateY(-50%);background:#FDEDEC;border:none;width:36px;height:36px;border-radius:50%;font-size:18px;cursor:pointer;color:#C0392B;font-weight:900;z-index:2}
 .proof-prev{left:4px}.proof-next{right:4px}
-.proof-dots{text-align:center;margin-top:12px}.proof-dots span{display:inline-block;width:8px;height:8px;border-radius:50%;background:#E8B4BE;margin:0 3px;cursor:pointer}.proof-dots span.active{background:var(--pinkDark);width:18px;border-radius:999px}
-.services-sec{background:#FFF9FA;padding:30px 14px 40px;margin-top:26px}
+.proof-dots{text-align:center;margin-top:12px}.proof-dots span{display:inline-block;width:8px;height:8px;border-radius:50%;background:#F5B7B1;margin:0 3px;cursor:pointer}.proof-dots span.active{background:var(--pinkDark);width:18px;border-radius:999px}
+.services-sec{background:#FDF2F2;padding:30px 14px 40px;margin-top:26px}
 .services-sec h2{font-family:Georgia,serif;font-size:34px;text-align:center;font-weight:400}
 .services-sec p.sub2{text-align:center;color:#555;font-size:14px;margin-top:6px}
 .services-grid{max-width:1100px;margin:20px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 @media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.services-grid{grid-template-columns:1fr}}
-.service-card{background:#fff;border:1px solid #F5D6DC;border-radius:16px;padding:20px 14px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.04)}
+.service-card{background:#fff;border:1px solid #F5B7B1;border-radius:16px;padding:20px 14px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.04)}
 .service-card .icon{font-size:36px}
 .service-card img{width:100%;height:110px;object-fit:cover;border-radius:12px;margin-top:10px}
 .service-card h3{font-family:Georgia,serif;font-size:20px;margin-top:10px;font-weight:400}
 .service-card p{font-size:13px;color:#555;line-height:1.6;margin-top:8px}
 .service-card .price{color:var(--pinkDark);font-size:22px;font-weight:900;margin-top:8px}
-.service-card a{color:#C96F7E;font-size:13px;text-decoration:none;font-weight:700;display:inline-block;margin-top:10px}
+.service-card a{color:#C0392B;font-size:13px;text-decoration:none;font-weight:700;display:inline-block;margin-top:10px}
 .wrap{max-width:1100px;margin:0 auto;padding:20px 14px}
-.card{background:#fff;border-radius:18px;padding:18px;margin-top:14px;border:1px solid #F5D6DC}
-.row{background:#fff;border-radius:14px;padding:12px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #F5D6DC}.row b{font-size:14px}.row small{color:#666;display:block}.price2{color:var(--pinkDark);font-size:19px;font-weight:900;white-space:nowrap}.book{background:#2B2B2B;color:#fff;padding:9px 14px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
+.card{background:#fff;border-radius:18px;padding:18px;margin-top:14px;border:1px solid #F5B7B1}
+.row{background:#fff;border-radius:14px;padding:12px;margin-top:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #F5B7B1}.row b{font-size:14px}.row small{color:#666;display:block}.price2{color:var(--pinkDark);font-size:19px;font-weight:900;white-space:nowrap}.book{background:#2B2B2B;color:#fff;padding:9px 14px;border-radius:999px;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
 .why{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
 @media(max-width:760px){.why{grid-template-columns:repeat(2,1fr)}}
-.why div{background:#fff;border-radius:14px;padding:14px;text-align:center;border:1px solid #F5D6DC}.why b{display:block;margin:6px 0 4px}.why p{font-size:12px;color:#666}
+.why div{background:#fff;border-radius:14px;padding:14px;text-align:center;border:1px solid #F5B7B1}.why b{display:block;margin:6px 0 4px}.why p{font-size:12px;color:#666}
 .team{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
 @media(max-width:760px){.team{grid-template-columns:repeat(2,1fr)}}
 .member{background:#fff;border-radius:14px;padding:12px;text-align:center}.member img{width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--pink)}
 .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
 @media(max-width:760px){.reviews{grid-template-columns:1fr}}
-.review{background:#fff;border-radius:14px;padding:14px;border:1px solid #F5D6DC}.review b{color:var(--pinkDark)}.review p{font-size:13px;line-height:1.6;margin-top:6px;color:#444}
+.review{background:#fff;border-radius:14px;padding:14px;border:1px solid #F5B7B1}.review b{color:var(--pinkDark)}.review p{font-size:13px;line-height:1.6;margin-top:6px;color:#444}
 .cta{background:#2B2B2B;color:#fff;border-radius:18px;padding:22px;text-align:center;margin-top:16px}
-.cta h2{color:#F06292}
-.footer-quote{background:#D98A9A;color:#fff;text-align:center;padding:22px 14px}
+.cta h2{color:#EC7063}
+.footer-quote{background:#C0392B;color:#fff;text-align:center;padding:22px 14px}
 .footer-quote h3{font-family:Georgia,serif;font-style:italic;font-size:22px;font-weight:400}
 .footer-quote p{font-size:12px;margin-top:8px;opacity:.95}
-.footer-small{text-align:center;padding:14px;font-size:11px;color:#888;background:#FFF9FA}
-.footer-small a{color:#C96F7E;font-weight:800;cursor:pointer}
+.footer-small{text-align:center;padding:14px;font-size:11px;color:#888;background:#FDF2F2}
+.footer-small a{color:#C0392B;font-weight:800;cursor:pointer}
 .floating-wa{position:fixed;right:16px;bottom:16px;z-index:100;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.3)}
 #adminView{display:none;max-width:700px;margin:0 auto;padding:14px}
 #adminView label{font-weight:800;font-size:12px;display:block;margin-top:14px}
 #adminView input,#adminView textarea,#adminView select{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin-top:4px}
-#adminView button{background:#C96F7E;color:#fff;border:0;padding:12px;border-radius:999px;font-weight:800;width:100%;margin-top:14px;cursor:pointer}
+#adminView button{background:#C0392B;color:#fff;border:0;padding:12px;border-radius:999px;font-weight:800;width:100%;margin-top:14px;cursor:pointer}
 #adminView .del{background:#000}#adminView .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .serviceBox{border:1px solid #eee;padding:10px;border-radius:12px;margin-top:8px;background:#fff}.small{font-size:12px;color:#666}
-.team-preview{width:90px;height:90px;border-radius:12px;object-fit:cover;border:3px solid #C96F7E;display:block;margin:8px auto}
-.logo-preview{width:180px;max-height:120px;object-fit:contain;border-radius:10px;display:none;margin:8px auto;border:2px solid #F8D7DD}
+.team-preview{width:90px;height:90px;border-radius:12px;object-fit:cover;border:3px solid #C0392B;display:block;margin:8px auto}
+.logo-preview{width:180px;max-height:120px;object-fit:contain;border-radius:10px;display:none;margin:8px auto;border:2px solid #F5B7B1}
 .cloud-status{font-size:11px;font-weight:800;padding:6px 10px;border-radius:999px;display:inline-block;margin-top:6px}
 .cloud-on{background:#D4FFD4;color:#006400}.cloud-off{background:#FFE0E0;color:#900}
 </style></head><body>
@@ -118,7 +118,7 @@ body{background:var(--bg);color:var(--text)}
 </div>
 <div class="wrap">
 <div class="card"><h2>Our Motive 💖 — Why We Clean</h2><p id="motive2">We believe a clean home = a calm mind. Dee started this business to help busy moms, working families and offices in Parow Valley & Cape Town have a little more time, and a little less stress. We clean with love, care and pride — like it's our own home.</p>
-<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><span style="background:#FDECEF;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700">📍 Parow Valley</span><span style="background:#FDECEF;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700">📍 Parow</span><span style="background:#FDECEF;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700">📍 Goodwood</span><span style="background:#FDECEF;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700">📍 Bellville</span></div></div>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px"><span style="background:#FDEDEC;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700">📍 Parow Valley</span><span style="background:#FDEDEC;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700">📍 Parow</span><span style="background:#FDEDEC;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700">📍 Goodwood</span><span style="background:#FDEDEC;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700">📍 Bellville</span></div></div>
 <div class="why"><div>⚡<b>Same-Day</b><p>Book today, clean today if we have space</p></div><div>🛡️<b>Trusted & Safe</b><p>Same team, checked & caring</p></div><div>🧴<b>We Bring All</b><p>We bring our own products & equipment</p></div><div>💖<b>Pay After Happy</b><p>You check first, then you pay</p></div></div>
 <div class="card"><h2>All Services & Prices 💰</h2><div id="list"></div></div>
 <div class="card" id="team"><h2>Meet Our Team 👩🏽‍🤝‍👩🏾</h2><div class="team" id="teamGrid"></div></div>
@@ -133,12 +133,12 @@ body{background:var(--bg);color:var(--text)}
 </div>
 <a class="floating-wa" id="waFloatBtn" href="https://wa.me/27730126925">💬</a>
 <div id="adminView">
-<div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #F8D7DD" id="loginBox"><h2 style="color:#C96F7E">Owner Login 🔒</h2><p  id="cloudStatus" class="cloud-status cloud-off">☁️ Cloud: Not Connected</span></p><label>Password</label><input id="pass" type="password" placeholder="Enter password"><button onclick="login()">Login</button><p class="small" style="text-align:center;margin-top:10px"><a href="#" onclick="showPublic();return false">← Back to website</a></p></div>
-<div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #F8D7DD;display:none" id="dash">
-<h2 style="color:#C96F7E">Dee's Dashboard 💖 — CLOUD</h2><p </p>
-<h3 style="margin-top:16px">🖼️ Logo </h3>
+<div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #F5B7B1" id="loginBox"><h2 style="color:#C0392B">Owner Login 🔒</h2><p><span id="cloudStatus" class="cloud-status cloud-off">☁️ Cloud: Not Connected</span></p><label>Password</label><input id="pass" type="password" placeholder="Enter password"><button onclick="login()">Login</button><p class="small" style="text-align:center;margin-top:10px"><a href="#" onclick="showPublic();return false">← Back to website</a></p></div>
+<div style="background:#fff;border-radius:18px;padding:18px;border:2px solid #F5B7B1;display:none" id="dash">
+<h2 style="color:#C0392B">Dee's Dashboard 💖 — CLOUD</h2><p class="small">Changes save to cloud — all customers see them instantly.</p>
+<h3 style="margin-top:16px">🖼️ Logo</h3>
 <img id="logoPreview" class="logo-preview" alt="Logo preview">
-<input type="file" id="logoInput" accept="image/*" onchange="previewLogo()" style="border:2px dashed #C96F7E;background:#FFF5F9">
+<input type="file" id="logoInput" accept="image/*" onchange="previewLogo()" style="border:2px dashed #C0392B;background:#FDEDEC">
 <button onclick="uploadLogo()" style="background:#000">✅ Upload This Logo To Cloud</button>
 <button class="del" onclick="removeLogo()">❌ Remove Logo</button>
 <p class="small">Status: <span id="logoStatus">No logo yet</span></p>
@@ -193,7 +193,7 @@ function renderEdit(){
 document.getElementById('motiveInput').value=d.motive;document.getElementById('motive2Input').value=d.motive2;document.getElementById('phoneInput').value=d.phone;document.getElementById('displayPhoneInput').value=d.displayPhone;document.getElementById('specialInput').value=String(d.special);
 document.getElementById('servicesEdit').innerHTML=d.services.map((s,i)=>`<div class="serviceBox"><label>Service ${i+1}</label><input value="${s.n}" onchange="d.services[${i}].n=this.value"><div class="row2"><input value="${s.p}" onchange="d.services[${i}].p=this.value"><input value="${s.d||''}" placeholder="Description" onchange="d.services[${i}].d=this.value"></div><button class="del" onclick="d.services.splice(${i},1);renderEdit()">Remove</button></div>`).join('');
 document.getElementById('photosEdit').innerHTML=d.photos.map((p,i)=>`<div style="display:flex;gap:8px;margin-top:8px;align-items:center"><img src="${p}" style="width:60px;height:60px;object-fit:cover;border-radius:10px"><button class="del" style="width:auto;padding:8px 14px" onclick="d.photos.splice(${i},1);renderEdit()">Delete</button></div>`).join('');
-document.getElementById('teamEdit').innerHTML=d.team.map((t,i)=>`<div class="serviceBox" style="text-align:center"><img src="${t.img}" class="team-preview"><label style="text-align:left">Name</label><input value="${t.n}" onchange="d.team[${i}].n=this.value"><label style="text-align:left">Role</label><input value="${t.r}" onchange="d.team[${i}].r=this.value"><label style="text-align:left">Team Member Picture 📸</label><input type="file" accept="image/*" onchange="upTeamPhoto(${i},this)" style="border:2px dashed #C96F7E;background:#FFF5F9"><button class="del" onclick="d.team.splice(${i},1);renderEdit()">Remove Member</button></div>`).join('');
+document.getElementById('teamEdit').innerHTML=d.team.map((t,i)=>`<div class="serviceBox" style="text-align:center"><img src="${t.img}" class="team-preview"><label style="text-align:left">Name</label><input value="${t.n}" onchange="d.team[${i}].n=this.value"><label style="text-align:left">Role</label><input value="${t.r}" onchange="d.team[${i}].r=this.value"><label style="text-align:left">Team Member Picture 📸</label><input type="file" accept="image/*" onchange="upTeamPhoto(${i},this)" style="border:2px dashed #C0392B;background:#FDEDEC"><button class="del" onclick="d.team.splice(${i},1);renderEdit()">Remove Member</button></div>`).join('');
 renderLogo();
 }
 function previewLogo(){let f=document.getElementById('logoInput').files[0];if(!f)return;let r=new FileReader();r.onload=e=>{tempLogo=e.target.result;let p=document.getElementById('logoPreview');p.src=tempLogo;p.style.display='block';};r.readAsDataURL(f);}
